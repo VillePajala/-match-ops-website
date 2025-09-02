@@ -70,19 +70,28 @@
   }
 
   .text-holographic {
-    background: conic-gradient(from 0deg at 50% 50%, 
-      #22D3EE 0deg, 
-      #A3E635 60deg, 
-      #FDE047 120deg, 
-      #F97316 180deg, 
-      #E83D6D 240deg, 
-      #7C3AED 300deg, 
-      #22D3EE 360deg);
-    background-clip: text;
+    background: linear-gradient(45deg, 
+      #22D3EE 0%, 
+      #A3E635 14%, 
+      #FDE047 28%, 
+      #F97316 42%, 
+      #E83D6D 56%, 
+      #7C3AED 70%, 
+      #22D3EE 84%,
+      #A3E635 100%);
+    background-size: 300% 300%;
     -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     color: transparent;
-    background-size: 200% 200%;
-    animation: holographic 3s ease-in-out infinite;
+    animation: holographic 20s linear infinite;
+    display: inline-block;
+  }
+
+  /* Debug - visible animation test */
+  .animate-spin-test {
+    animation: spin 2s linear infinite;
   }
 
   .gradient-primary {
@@ -110,11 +119,20 @@
 
 /* Animations */
 @keyframes holographic {
-  0%, 100% {
+  0% {
     background-position: 0% 50%;
   }
+  25% {
+    background-position: 100% 0%;
+  }
   50% {
-    background-position: 100% 50%;
+    background-position: 50% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 

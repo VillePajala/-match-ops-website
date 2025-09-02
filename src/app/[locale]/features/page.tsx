@@ -17,25 +17,18 @@ export default function FeaturesPage() {
       color: 'cyan',
       features: [
         {
-          icon: Target,
-          title: 'Interactive Soccer Field',
-          description: 'Touch-friendly field interface for positioning players and drawing tactical plays.',
-          benefits: ['Drag & drop player positioning', 'Draw tactical lines and arrows', 'Save formations for reuse', 'Real-time field visualization'],
-          image: '/features/tactical-field.png'
-        },
-        {
           icon: Settings,
-          title: 'Formation Builder',
-          description: 'Create and customize formations with detailed player roles and responsibilities.',
-          benefits: ['Pre-built formation templates', 'Custom formation creation', 'Player role assignments', 'Formation transition planning'],
+          title: 'Player Positioning',
+          description: 'Drag-and-drop player positioning with real-time formation management during matches.',
+          benefits: ['Live player positioning', 'Real-time formation updates', 'Instant tactical adjustments', 'Interactive field management'],
           image: '/features/formations.png'
         },
         {
-          icon: FileText,
-          title: 'Game Plans',
-          description: 'Develop comprehensive game strategies with set pieces and tactical notes.',
-          benefits: ['Set piece planning', 'Opposition analysis', 'Tactical notes', 'Strategy sharing'],
-          image: '/features/game-plans.png'
+          icon: Target,
+          title: 'Tactical Drawing Board',
+          description: 'Interactive drawing tools for creating tactical plays, arrows, and strategic diagrams.',
+          benefits: ['Draw tactical lines and arrows', 'Create set piece plays', 'Save diagrams (planned)', 'Export features (planned)'],
+          image: '/features/tactical-field.png'
         }
       ]
     },
@@ -48,23 +41,23 @@ export default function FeaturesPage() {
       features: [
         {
           icon: BarChart3,
-          title: 'Advanced Statistics',
-          description: 'Comprehensive performance tracking with detailed player and team analytics.',
-          benefits: ['Individual player stats', 'Team performance metrics', 'Historical comparisons', 'Export capabilities'],
-          image: '/features/statistics.png'
+          title: 'Competition Statistics',
+          description: 'Track team performance across seasons, tournaments, and competitions.',
+          benefits: ['Competition overview data', 'Tournament & season tracking', 'Team performance trends', 'Long-term analysis (planned)'],
+          image: '/features/season-stats.png'
         },
         {
           icon: Trophy,
-          title: 'Performance Analysis',
-          description: 'Deep insights into team and player performance trends over time.',
-          benefits: ['Performance trends', 'Heat maps', 'Comparative analysis', 'Improvement tracking'],
-          image: '/features/analysis.png'
+          title: 'Player Performance Analysis',
+          description: 'Detailed individual player statistics and development tracking.',
+          benefits: ['Individual player metrics', 'Personal development tracking', 'Performance comparisons', 'Progress monitoring'],
+          image: '/features/player-analysis.png'
         },
         {
           icon: Clock,
           title: 'Live Game Tracking',
           description: 'Real-time event tracking during matches with instant statistics updates.',
-          benefits: ['Live event logging', 'Real-time stats', 'Instant feedback', 'Match timeline'],
+          benefits: ['Live event logging', 'Real-time stats', 'Match timer tracking', 'Event history'],
           image: '/features/live-tracking.png'
         }
       ]
@@ -202,15 +195,87 @@ export default function FeaturesPage() {
                     </Button>
                   </div>
 
-                  {/* Feature Image Placeholder */}
+                  {/* Feature Image */}
                   <div className={`${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
-                    <div className="bg-slate-800 border border-slate-600 rounded-xl p-8 aspect-video flex items-center justify-center group hover:border-slate-500 transition-colors duration-300">
-                      <div className="text-center">
-                        <Smartphone className={`w-16 h-16 mx-auto mb-4 ${getColorClasses(category.color).text} group-hover:scale-110 transition-transform duration-300`} />
-                        <p className="text-slate-400 font-body">{feature.title} Screenshot</p>
-                        <p className="text-slate-500 text-sm mt-2 font-body">Coming Soon</p>
+                    {feature.title === 'Player Positioning' ? (
+                      <div className="flex justify-center">
+                        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
+                          <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
+                            <img 
+                              src="/features/player-positioning-live-match.png" 
+                              alt="MatchOps Local player positioning interface showing live match between Kultsa and PePo Purppura with real-time player positions"
+                              className="w-full h-auto block"
+                              style={{ imageRendering: 'crisp-edges' }}
+                            />
+                          </div>
+                          <p className="text-slate-300 text-xs mt-2 text-center font-body">Live match positioning</p>
+                        </div>
                       </div>
-                    </div>
+                    ) : feature.title === 'Tactical Drawing Board' ? (
+                      <div className="flex justify-center">
+                        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
+                          <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
+                            <img 
+                              src="/features/tactical-drawing-board.png" 
+                              alt="MatchOps Local tactical drawing interface showing orange tactical arrows and play diagrams drawn on soccer field"
+                              className="w-full h-auto block"
+                              style={{ imageRendering: 'crisp-edges' }}
+                            />
+                          </div>
+                          <p className="text-slate-300 text-xs mt-2 text-center font-body">Tactical play design</p>
+                        </div>
+                      </div>
+                    ) : feature.title === 'Competition Statistics' ? (
+                      <div className="flex justify-center">
+                        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
+                          <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
+                            <img 
+                              src="/features/competition-statistics.png" 
+                              alt="MatchOps Local competition statistics showing EKK Kartteli 2025 team performance with 78.9% win rate and player statistics"
+                              className="w-full h-auto block"
+                              style={{ imageRendering: 'crisp-edges' }}
+                            />
+                          </div>
+                          <p className="text-slate-300 text-xs mt-2 text-center font-body">Competition performance data</p>
+                        </div>
+                      </div>
+                    ) : feature.title === 'Player Performance Analysis' ? (
+                      <div className="flex justify-center">
+                        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
+                          <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
+                            <img 
+                              src="/features/player-performance-analysis.png" 
+                              alt="MatchOps Local player performance analysis showing Jooa Pajala individual statistics with 47 matches, 38 goals, 16 assists and performance graphs"
+                              className="w-full h-auto block"
+                              style={{ imageRendering: 'crisp-edges' }}
+                            />
+                          </div>
+                          <p className="text-slate-300 text-xs mt-2 text-center font-body">Individual player development</p>
+                        </div>
+                      </div>
+                    ) : feature.title === 'Live Game Tracking' ? (
+                      <div className="flex justify-center">
+                        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
+                          <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
+                            <img 
+                              src="/features/live-game-tracking.png" 
+                              alt="MatchOps Local live game tracking interface showing PePo Lila vs LaPa match with real-time timer at 02:16, live events, and action buttons"
+                              className="w-full h-auto block"
+                              style={{ imageRendering: 'crisp-edges' }}
+                            />
+                          </div>
+                          <p className="text-slate-300 text-xs mt-2 text-center font-body">Real-time match tracking</p>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="bg-slate-800 border border-slate-600 rounded-xl p-8 aspect-video flex items-center justify-center group hover:border-slate-500 transition-colors duration-300">
+                        <div className="text-center">
+                          <Smartphone className={`w-16 h-16 mx-auto mb-4 ${getColorClasses(category.color).text} group-hover:scale-110 transition-transform duration-300`} />
+                          <p className="text-slate-400 font-body">{feature.title} Screenshot</p>
+                          <p className="text-slate-500 text-sm mt-2 font-body">Coming Soon</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}

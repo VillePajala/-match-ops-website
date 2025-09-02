@@ -37,13 +37,16 @@ module.exports = {
         'violet': '0 10px 15px -3px rgb(124 58 237 / 0.4), 0 4px 6px -4px rgb(124 58 237 / 0.4)',
       },
       animation: {
-        'holographic': 'holographic 3s ease-in-out infinite',
+        'holographic': 'holographic 20s linear infinite',
         'shimmer': 'shimmer 1.5s infinite',
       },
       keyframes: {
         holographic: {
-          '0%, 100%': { 'background-position': '0% 50%' },
-          '50%': { 'background-position': '100% 50%' },
+          '0%': { 'background-position': '0% 50%' },
+          '25%': { 'background-position': '100% 0%' },
+          '50%': { 'background-position': '50% 100%' },
+          '75%': { 'background-position': '0% 100%' },
+          '100%': { 'background-position': '0% 50%' },
         },
         shimmer: {
           '0%': { 'background-position': '200% 0' },

@@ -79,9 +79,9 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <Section variant="hero" className="relative overflow-hidden bg-bg-primary">
-        <div className="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-secondary/20 to-bg-primary" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-cyan/5 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-lime/5 rounded-full blur-3xl animate-pulse animation-delay-3000" />
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-800/20 to-slate-950" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-400/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-lime-400/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }} />
         
         <Container className="relative z-10">
           <div className="text-center max-w-4xl mx-auto">
@@ -136,15 +136,23 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* App Preview Placeholder */}
+      {/* MatchOps Local App Preview */}
       <Section className="relative -mt-16 z-20">
         <Container>
-          <div className="bg-gradient-to-r from-slate-800 to-slate-600 rounded-2xl p-8 shadow-2xl border border-slate-600/50">
-            <div className="aspect-video bg-bg-primary rounded-xl flex items-center justify-center border border-slate-600">
-              <div className="text-center">
-                <Smartphone className="w-16 h-16 text-accent-cyan mx-auto mb-4" />
-                <p className="text-text-secondary font-body">App Preview Coming Soon</p>
-                <p className="text-text-muted text-sm mt-2 font-body">Interactive demo will be available here</p>
+          <div className="text-center">
+            <div className="inline-block bg-slate-800/50 backdrop-blur-sm rounded-3xl p-6 shadow-2xl border border-slate-700/50">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl max-w-xs mx-auto bg-black">
+                <img 
+                  src="/images/screenshots/app/player-positioning-kultsa-pepo.png" 
+                  alt="MatchOps Local tactical board showing live match between Kultsa and PePo Purppura with player positions and real-time score 2-4"
+                  className="w-full h-auto block"
+                  loading="eager"
+                  style={{ imageRendering: 'crisp-edges' }}
+                />
+              </div>
+              <div className="mt-4">
+                <p className="text-slate-100 font-semibold text-lg font-body">Live Tactical Board in Action</p>
+                <p className="text-slate-300 text-sm mt-1 font-body">Real match data • Interactive positioning • Professional tools</p>
               </div>
             </div>
           </div>
@@ -193,7 +201,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
               <div key={index} className="text-center group">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-primary-indigo to-primary-violet rounded-full text-white font-bold text-xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-indigo-600 to-violet-600 rounded-full text-white font-bold text-xl mb-6 group-hover:scale-110 transition-transform duration-300">
                   {step.number}
                 </div>
                 <h3 className="text-xl font-semibold text-text-primary mb-3 group-hover:text-accent-cyan transition-colors duration-300">
@@ -205,7 +213,7 @@ export default function HomePage() {
                 
                 {/* Connection Line (hidden on last item) */}
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 left-1/2 w-full h-0.5 bg-gradient-to-r from-primary-indigo/50 to-transparent transform translate-x-8" />
+                  <div className="hidden lg:block absolute top-8 left-1/2 w-full h-0.5 bg-gradient-to-r from-indigo-600/50 to-transparent transform translate-x-8" />
                 )}
               </div>
             ))}
@@ -230,7 +238,7 @@ export default function HomePage() {
               "{t('home.testimonials.placeholder.quote')}"
             </blockquote>
             <div className="flex items-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-accent-cyan to-accent-lime rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+              <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-lime-400 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
                 {t('home.testimonials.placeholder.author').charAt(0)}
               </div>
               <div>
@@ -247,7 +255,7 @@ export default function HomePage() {
       </Section>
 
       {/* Final CTA Section */}
-      <Section className="bg-gradient-to-r from-primary-indigo to-primary-violet">
+      <Section className="bg-gradient-to-r from-indigo-600 to-violet-600">
         <Container>
           <div className="text-center text-white">
             <h2 className="text-3xl sm:text-4xl font-display font-bold mb-4">
