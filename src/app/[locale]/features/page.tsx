@@ -92,7 +92,7 @@ export default function FeaturesPage() {
         }
       ]
     }
-  ];
+  ] as const;
 
   const getColorClasses = (color: string) => {
     const colors = {
