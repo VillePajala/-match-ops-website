@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown, Globe } from 'lucide-react';
 import { useI18n, useChangeLocale, useCurrentLocale } from '@/locales/client';
 import { Container, Logo, Button } from '@/components/ui';
@@ -15,6 +16,7 @@ export default function Header() {
   const t = useI18n();
   const changeLocale = useChangeLocale();
   const currentLocale = useCurrentLocale();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,7 +67,10 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="inline-block text-slate-300 hover:text-slate-100 transition-colors duration-200 font-medium focus:outline-none px-2 py-1"
+                  className={cn(
+                    'inline-block text-slate-300 hover:text-slate-100 transition-colors duration-200 font-medium focus:outline-none px-2 py-1',
+                    pathname === item.href && 'text-slate-100 border-b-2 border-slate-100'
+                  )}
                   style={{ textDecoration: 'none', border: 'none', outline: 'none' }}
                 >
                   <span style={{ textDecoration: 'none', border: 'none' }}>
@@ -147,7 +152,10 @@ export default function Header() {
                     key={item.name}
                     href={item.href}
                     onClick={closeMenu}
-                    className="block text-text-secondary hover:text-text-primary transition-colors duration-200 font-medium py-2 border-b border-bg-tertiary/50 focus:outline-none no-underline"
+                    className={cn(
+                      'block text-text-secondary hover:text-text-primary transition-colors duration-200 font-medium py-2 border-b border-bg-tertiary/50 focus:outline-none no-underline',
+                      pathname === item.href && 'text-text-primary'
+                    )}
                   >
                     {item.name}
                   </Link>
