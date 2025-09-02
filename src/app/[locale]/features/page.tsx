@@ -184,7 +184,7 @@ export default function FeaturesPage() {
                       {feature.benefits.map((benefit, benefitIndex) => (
                         <div key={benefitIndex} className="flex items-center gap-3">
                           <div className={`w-2 h-2 rounded-full ${getColorClasses(category.color).bg.replace('/10', '')}`} />
-                          <span className="text-slate-300 font-body">{benefit}</span>
+                          <span className="text-slate-300 font-body">{t(benefit)}</span>
                         </div>
                       ))}
                     </div>
