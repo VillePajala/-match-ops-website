@@ -26,16 +26,24 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       xl: 'h-14 px-10 text-xl font-semibold'
     };
 
-    const Comp = asChild ? 'div' : 'button';
+    if (asChild) {
+      return (
+        <div
+          className={cn(baseStyles, variants[variant], sizes[size], className)}
+        >
+          {children}
+        </div>
+      );
+    }
 
     return (
-      <Comp
+      <button
         className={cn(baseStyles, variants[variant], sizes[size], className)}
         ref={ref}
         {...props}
       >
         {children}
-      </Comp>
+      </button>
     );
   }
 );

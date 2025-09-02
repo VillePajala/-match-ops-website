@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { ArrowRight, Download, Users, Play, Trophy, CheckCircle, Smartphone, Wifi, Clock, Target } from 'lucide-react';
 import { useI18n } from '@/locales/client';
 import { Button, Container, Section, Card, CardIcon, CardTitle, CardDescription } from '@/components/ui';
@@ -126,7 +125,7 @@ export default function HowItWorksPage() {
       <Section variant="hero" className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
         <Container>
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-6 text-slate-100">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-body font-bold mb-6 text-slate-100">
               {t('howItWorks.title')}
             </h1>
             <p className="text-xl text-slate-300 mb-8 font-body leading-relaxed">
@@ -157,11 +156,11 @@ export default function HowItWorksPage() {
                   {/* Step Content */}
                   <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                     <div className="flex items-center gap-6 mb-6">
-                      <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-indigo-600 to-violet-600 rounded-full text-white font-bold text-xl font-display">
+                      <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-indigo-600 to-violet-600 rounded-full text-white font-bold text-xl font-body">
                         {step.number}
                       </div>
                       <div>
-                        <h2 className="text-3xl font-display font-bold text-slate-100 mb-2">
+                        <h2 className="text-3xl font-body font-bold text-slate-100 mb-2">
                           {step.title}
                         </h2>
                       </div>
@@ -215,7 +214,7 @@ export default function HowItWorksPage() {
         <Container>
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-display font-bold text-slate-100 mb-4">
+              <h2 className="text-3xl font-body font-bold text-slate-100 mb-4">
                 Quick Start Checklist
               </h2>
               <p className="text-xl text-slate-300 font-body">
@@ -241,7 +240,7 @@ export default function HowItWorksPage() {
       <Section>
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-display font-bold text-slate-100 mb-4">
+            <h2 className="text-3xl font-body font-bold text-slate-100 mb-4">
               Real Coaching Scenarios
             </h2>
             <p className="text-xl text-slate-300 font-body max-w-2xl mx-auto">
@@ -276,7 +275,7 @@ export default function HowItWorksPage() {
       <Section className="bg-slate-900">
         <Container>
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-display font-bold text-slate-100 mb-4">
+            <h2 className="text-3xl font-body font-bold text-slate-100 mb-4">
               System Requirements
             </h2>
             <p className="text-xl text-slate-300 font-body">
@@ -322,7 +321,7 @@ export default function HowItWorksPage() {
       <Section className="bg-gradient-to-r from-indigo-600 to-violet-600">
         <Container>
           <div className="text-center text-white">
-            <h2 className="text-3xl sm:text-4xl font-display font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl font-body font-bold mb-4">
               Ready to Get Started?
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto font-body">

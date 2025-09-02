@@ -1,18 +1,15 @@
 'use client';
 
-import Link from 'next/link';
 import { ArrowRight, Heart, Target, Users, Zap, Trophy, Code, Coffee } from 'lucide-react';
-import { useI18n } from '@/locales/client';
 import { Button, Container, Section, Card, CardIcon, CardTitle, CardDescription } from '@/components/ui';
 
 export default function AboutPage() {
-  const t = useI18n();
 
   const values = [
     {
       icon: Heart,
       title: 'Passion for Soccer',
-      description: 'We\'re soccer enthusiasts who understand the beautiful game and the dedication it takes to coach at any level.',
+      description: 'We&apos;re soccer enthusiasts who understand the beautiful game and the dedication it takes to coach at any level.',
       color: 'text-red-400 bg-red-400/10'
     },
     {
@@ -80,11 +77,11 @@ export default function AboutPage() {
       <Section variant="hero" className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
         <Container>
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-6 text-slate-100">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-body font-bold mb-6 text-slate-100">
               About MatchOps
             </h1>
             <p className="text-xl text-slate-300 mb-8 font-body leading-relaxed">
-              We're on a mission to empower soccer coaches with professional-grade tools that are accessible to everyone.
+              We&apos;re on a mission to empower soccer coaches with professional-grade tools that are accessible to everyone.
             </p>
             <Button size="lg" className="mb-12">
               Join Our Community
@@ -99,7 +96,7 @@ export default function AboutPage() {
         <Container>
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-display font-bold text-slate-100 mb-6">
+              <h2 className="text-3xl font-body font-bold text-slate-100 mb-6">
                 Our Mission
               </h2>
               <p className="text-2xl text-slate-300 font-body leading-relaxed mb-8">
@@ -111,9 +108,9 @@ export default function AboutPage() {
                   <Target className="w-12 h-12 text-cyan-400" />
                 </div>
                 <p className="text-lg text-slate-300 font-body leading-relaxed">
-                  "Every coach deserves access to the same quality tools used by professionals. 
-                  Whether you're coaching your child's recreational team or managing a competitive club, 
-                  MatchOps Local gives you the power to organize, analyze, and elevate your coaching game."
+                  &ldquo;Every coach deserves access to the same quality tools used by professionals. 
+                  Whether you&apos;re coaching your child&apos;s recreational team or managing a competitive club, 
+                  MatchOps Local gives you the power to organize, analyze, and elevate your coaching game.&rdquo;
                 </p>
               </div>
             </div>
@@ -125,7 +122,7 @@ export default function AboutPage() {
       <Section className="bg-slate-900">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-display font-bold text-slate-100 mb-4">
+            <h2 className="text-3xl font-body font-bold text-slate-100 mb-4">
               Our Values
             </h2>
             <p className="text-xl text-slate-300 font-body">
@@ -153,18 +150,18 @@ export default function AboutPage() {
       <Section>
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-display font-bold text-slate-100 mb-4">
+            <h2 className="text-3xl font-body font-bold text-slate-100 mb-4">
               Making an Impact
             </h2>
             <p className="text-xl text-slate-300 font-body">
-              Numbers that show the difference we're making in soccer coaching
+              Numbers that show the difference we&apos;re making in soccer coaching
             </p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl sm:text-5xl font-bold text-slate-100 mb-2 font-display">
+                <div className="text-4xl sm:text-5xl font-bold text-slate-100 mb-2 font-body">
                   {stat.value}
                 </div>
                 <div className="text-slate-300 font-body">
@@ -180,7 +177,7 @@ export default function AboutPage() {
       <Section className="bg-slate-900">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-display font-bold text-slate-100 mb-4">
+            <h2 className="text-3xl font-body font-bold text-slate-100 mb-4">
               Our Journey
             </h2>
             <p className="text-xl text-slate-300 font-body">
@@ -194,7 +191,7 @@ export default function AboutPage() {
                 <div key={index} className="flex gap-8 items-start">
                   <div className="flex-shrink-0">
                     <div className="w-16 h-16 bg-gradient-to-r from-indigo-600 to-violet-600 rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold font-display">{item.year}</span>
+                      <span className="text-white font-bold font-body">{item.year}</span>
                     </div>
                   </div>
                   <div className="flex-1">
@@ -216,7 +213,7 @@ export default function AboutPage() {
       <Section>
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-display font-bold text-slate-100 mb-4">
+            <h2 className="text-3xl font-body font-bold text-slate-100 mb-4">
               Meet the Team
             </h2>
             <p className="text-xl text-slate-300 font-body">
@@ -249,7 +246,7 @@ export default function AboutPage() {
       <Section className="bg-slate-900">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-display font-bold text-slate-100 mb-4">
+            <h2 className="text-3xl font-body font-bold text-slate-100 mb-4">
               Built with Modern Technology
             </h2>
             <p className="text-xl text-slate-300 font-body">
@@ -295,7 +292,7 @@ export default function AboutPage() {
       <Section className="bg-gradient-to-r from-indigo-600 to-violet-600">
         <Container>
           <div className="text-center text-white">
-            <h2 className="text-3xl sm:text-4xl font-display font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl font-body font-bold mb-4">
               Join the MatchOps Community
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto font-body">

@@ -1,6 +1,6 @@
 'use client';
 
-import { Shield, Lock, Eye, Database, Mail, Calendar } from 'lucide-react';
+import { Shield, Lock, Database, Mail, Calendar } from 'lucide-react';
 import { Container, Section } from '@/components/ui';
 
 export default function PrivacyPage() {
@@ -15,7 +15,7 @@ export default function PrivacyPage() {
             <div className="w-16 h-16 bg-cyan-400/20 rounded-full flex items-center justify-center mx-auto mb-6">
               <Shield className="w-10 h-10 text-cyan-400" />
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-6 text-slate-100">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-body font-bold mb-6 text-slate-100">
               Privacy Policy
             </h1>
             <p className="text-xl text-slate-300 mb-8 font-body leading-relaxed">
@@ -47,7 +47,7 @@ export default function PrivacyPage() {
 
             <div className="space-y-12">
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">1. Information We Collect</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">1. Information We Collect</h2>
                 
                 <h3 className="text-xl font-semibold text-slate-100 mb-3 font-body">Information You Provide</h3>
                 <ul className="list-disc pl-6 space-y-2 text-slate-300 font-body">
@@ -67,7 +67,7 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">2. How We Use Your Information</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">2. How We Use Your Information</h2>
                 <ul className="list-disc pl-6 space-y-2 text-slate-300 font-body">
                   <li>To provide and maintain the MatchOps Local service</li>
                   <li>To sync your data across devices (only if you enable cloud sync)</li>
@@ -79,7 +79,7 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">3. Data Storage and Security</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">3. Data Storage and Security</h2>
                 
                 <div className="bg-slate-800 border border-slate-600 rounded-lg p-6 mb-6">
                   <div className="flex items-start gap-4">
@@ -87,7 +87,7 @@ export default function PrivacyPage() {
                     <div>
                       <h3 className="text-lg font-semibold text-slate-100 mb-2 font-body">Local-First Storage</h3>
                       <p className="text-slate-300 font-body">
-                        By default, all your team data is stored locally on your device. We don't have access to your 
+                        By default, all your team data is stored locally on your device. We don&apos;t have access to your 
                         team information unless you explicitly enable cloud sync.
                       </p>
                     </div>
@@ -105,7 +105,7 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">4. Data Sharing and Disclosure</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">4. Data Sharing and Disclosure</h2>
                 <p className="text-slate-300 font-body mb-4">
                   We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:
                 </p>
@@ -119,7 +119,7 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">5. Your Rights and Choices</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">5. Your Rights and Choices</h2>
                 
                 <h3 className="text-xl font-semibold text-slate-100 mb-3 font-body">Access and Control</h3>
                 <ul className="list-disc pl-6 space-y-2 text-slate-300 font-body">
@@ -134,7 +134,7 @@ export default function PrivacyPage() {
                 <ul className="list-disc pl-6 space-y-2 text-slate-300 font-body">
                   <li>Right to access your personal data</li>
                   <li>Right to rectification of inaccurate data</li>
-                  <li>Right to erasure ("right to be forgotten")</li>
+                  <li>Right to erasure (&ldquo;right to be forgotten&rdquo;)</li>
                   <li>Right to restrict processing</li>
                   <li>Right to data portability</li>
                   <li>Right to object to processing</li>
@@ -142,7 +142,7 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">6. Cookies and Tracking</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">6. Cookies and Tracking</h2>
                 <p className="text-slate-300 font-body mb-4">
                   We use minimal cookies and tracking technologies:
                 </p>
@@ -157,7 +157,7 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">7. Children's Privacy</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">7. Children&apos;s Privacy</h2>
                 <p className="text-slate-300 font-body">
                   MatchOps Local is intended for use by coaches and team administrators, typically adults. While the app 
                   may contain information about players who are minors, we do not knowingly collect personal information 
@@ -167,7 +167,7 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">8. Data Retention</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">8. Data Retention</h2>
                 <ul className="list-disc pl-6 space-y-2 text-slate-300 font-body">
                   <li>Local data remains on your device until you delete it</li>
                   <li>Cloud sync data is retained while your account is active</li>
@@ -178,7 +178,7 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">9. International Transfers</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">9. International Transfers</h2>
                 <p className="text-slate-300 font-body">
                   Our services are primarily operated from the United States. If you are accessing our service from 
                   outside the US, your information may be transferred to, stored, and processed in the US. We ensure 
@@ -187,7 +187,7 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">10. Changes to This Policy</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">10. Changes to This Policy</h2>
                 <p className="text-slate-300 font-body">
                   We may update this privacy policy from time to time. We will notify you of significant changes by:
                 </p>
@@ -202,7 +202,7 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">11. Contact Us</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">11. Contact Us</h2>
                 <p className="text-slate-300 font-body mb-4">
                   If you have questions about this privacy policy or our data practices, please contact us:
                 </p>

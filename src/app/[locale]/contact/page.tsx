@@ -1,12 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { Mail, MessageCircle, Calendar, Clock, MapPin, Phone, Send, CheckCircle } from 'lucide-react';
-import { useI18n } from '@/locales/client';
+import { Mail, MessageCircle, Calendar, Clock, Send, CheckCircle } from 'lucide-react';
 import { Button, Container, Section, Card, CardTitle, CardDescription } from '@/components/ui';
 
 export default function ContactPage() {
-  const t = useI18n();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -82,11 +80,11 @@ export default function ContactPage() {
             <div className="w-16 h-16 bg-lime-400/20 rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle className="w-10 h-10 text-lime-400" />
             </div>
-            <h1 className="text-4xl font-display font-bold mb-6 text-slate-100">
+            <h1 className="text-4xl font-body font-bold mb-6 text-slate-100">
               Message Sent Successfully!
             </h1>
             <p className="text-xl text-slate-300 mb-8 font-body leading-relaxed">
-              Thank you for contacting us. We've received your message and will get back to you within 24 hours.
+              Thank you for contacting us. We&apos;ve received your message and will get back to you within 24 hours.
             </p>
             <Button onClick={() => setIsSubmitted(false)}>
               Send Another Message
@@ -103,11 +101,11 @@ export default function ContactPage() {
       <Section variant="hero" className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
         <Container>
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-6 text-slate-100">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-body font-bold mb-6 text-slate-100">
               Get in Touch
             </h1>
             <p className="text-xl text-slate-300 mb-8 font-body leading-relaxed">
-              Have questions about MatchOps Local? Need help getting started? We're here to help you succeed.
+              Have questions about MatchOps Local? Need help getting started? We&apos;re here to help you succeed.
             </p>
           </div>
         </Container>
@@ -143,7 +141,7 @@ export default function ContactPage() {
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Form */}
               <div>
-                <h2 className="text-3xl font-display font-bold text-slate-100 mb-6">
+                <h2 className="text-3xl font-body font-bold text-slate-100 mb-6">
                   Send us a Message
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -177,7 +175,7 @@ export default function ContactPage() {
                         onChange={handleInputChange}
                         required
                         className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent font-body"
-                        placeholder="Enter your name"
+                        placeholder="John Doe"
                       />
                     </div>
                     <div>
@@ -191,7 +189,7 @@ export default function ContactPage() {
                         onChange={handleInputChange}
                         required
                         className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent font-body"
-                        placeholder="Enter your email"
+                        placeholder="john@example.com"
                       />
                     </div>
                   </div>
@@ -208,7 +206,7 @@ export default function ContactPage() {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent font-body"
-                      placeholder="What's this about?"
+                      placeholder="How can I get started?"
                     />
                   </div>
 
@@ -224,7 +222,7 @@ export default function ContactPage() {
                       required
                       rows={6}
                       className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent font-body resize-vertical"
-                      placeholder="Tell us more about what you need help with..."
+                      placeholder="Tell us more about your needs..."
                     />
                   </div>
 
@@ -252,7 +250,7 @@ export default function ContactPage() {
 
               {/* Contact Info */}
               <div>
-                <h2 className="text-3xl font-display font-bold text-slate-100 mb-6">
+                <h2 className="text-3xl font-body font-bold text-slate-100 mb-6">
                   Other Ways to Reach Us
                 </h2>
                 
@@ -321,7 +319,7 @@ export default function ContactPage() {
       <Section className="bg-slate-900">
         <Container>
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-display font-bold text-slate-100 mb-4">
+            <h2 className="text-3xl font-body font-bold text-slate-100 mb-4">
               Frequently Asked Questions
             </h2>
             <p className="text-xl text-slate-300 font-body">
@@ -333,7 +331,7 @@ export default function ContactPage() {
             <Card>
               <CardTitle className="mb-3">How do I install MatchOps Local?</CardTitle>
               <CardDescription>
-                Simply visit our website on any device and click "Install" when prompted. It works like a native app!
+                Simply visit our website on any device and click &ldquo;Install&rdquo; when prompted. It works like a native app!
               </CardDescription>
             </Card>
 

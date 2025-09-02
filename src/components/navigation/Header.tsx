@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, ChevronDown, Globe } from 'lucide-react';
 import { useI18n, useChangeLocale, useCurrentLocale } from '@/locales/client';
-import { Button, Container, Logo } from '@/components/ui';
+import { Container, Logo, Button } from '@/components/ui';
 import { cn } from '@/lib/utils';
 
 export default function Header() {
@@ -26,14 +26,15 @@ export default function Header() {
   }, []);
 
   const navigation = [
+    { name: t('nav.home'), href: `/${currentLocale}` },
     { name: t('nav.features'), href: `/${currentLocale}/features` },
     { name: t('nav.howItWorks'), href: `/${currentLocale}/how-it-works` },
     { name: t('nav.support'), href: `/${currentLocale}/support` },
   ];
 
   const locales = [
-    { code: 'en', name: 'English', flag: '🇺🇸' },
-    { code: 'fi', name: 'Suomi', flag: '🇫🇮' }
+    { code: 'en', name: 'EN', flag: '' },
+    { code: 'fi', name: 'FI', flag: '🇫🇮' }
   ];
 
   const currentLocaleInfo = locales.find(l => l.code === currentLocale) || locales[0];
@@ -48,14 +49,14 @@ export default function Header() {
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
           isScrolled 
             ? 'bg-bg-primary/95 backdrop-blur-md border-b border-bg-tertiary shadow-lg'
-            : 'bg-transparent'
+            : 'bg-transparent border-none outline-none'
         )}
       >
         <Container>
           <nav className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link href={`/${currentLocale}`} className="flex items-center focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded-md">
-              <Logo size="sm" />
+            <Link href={`/${currentLocale}`} className="flex items-center focus:outline-none no-underline">
+              <Logo className="text-2xl sm:text-3xl" />
             </Link>
 
             {/* Desktop Navigation */}
@@ -64,9 +65,12 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-text-secondary hover:text-text-primary transition-colors duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded-md px-2 py-1"
+                  className="inline-block text-slate-300 hover:text-slate-100 transition-colors duration-200 font-medium focus:outline-none px-2 py-1"
+                  style={{ textDecoration: 'none', border: 'none', outline: 'none' }}
                 >
-                  {item.name}
+                  <span style={{ textDecoration: 'none', border: 'none' }}>
+                    {item.name}
+                  </span>
                 </Link>
               ))}
             </div>
@@ -77,11 +81,11 @@ export default function Header() {
               <div className="relative">
                 <button
                   onClick={() => setIsLocaleMenuOpen(!isLocaleMenuOpen)}
-                  className="flex items-center space-x-1 text-text-secondary hover:text-text-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded-md px-2 py-1"
+                  className="flex items-center space-x-1 text-text-secondary hover:text-text-primary transition-colors duration-200 focus:outline-none px-2 py-1"
                   aria-label="Change language"
                 >
                   <Globe className="w-4 h-4" />
-                  <span>{currentLocaleInfo.flag}</span>
+                  <span>{currentLocaleInfo.flag}{currentLocaleInfo.name}</span>
                   <ChevronDown className={cn('w-4 h-4 transition-transform duration-200', isLocaleMenuOpen ? 'rotate-180' : '')} />
                 </button>
 
@@ -110,15 +114,12 @@ export default function Header() {
                 )}
               </div>
 
-              <Button size="md">
-                {t('nav.tryFree')}
-              </Button>
             </div>
 
             {/* Mobile menu button */}
             <button
               onClick={toggleMenu}
-              className="md:hidden p-2 text-text-secondary hover:text-text-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded-md"
+              className="md:hidden p-2 text-text-secondary hover:text-text-primary transition-colors duration-200 focus:outline-none rounded-md"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -146,7 +147,7 @@ export default function Header() {
                     key={item.name}
                     href={item.href}
                     onClick={closeMenu}
-                    className="block text-text-secondary hover:text-text-primary transition-colors duration-200 font-medium py-2 border-b border-bg-tertiary/50 focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded-md"
+                    className="block text-text-secondary hover:text-text-primary transition-colors duration-200 font-medium py-2 border-b border-bg-tertiary/50 focus:outline-none no-underline"
                   >
                     {item.name}
                   </Link>

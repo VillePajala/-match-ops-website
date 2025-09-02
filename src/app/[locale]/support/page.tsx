@@ -159,7 +159,7 @@ export default function SupportPage() {
       <Section variant="hero" className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
         <Container>
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-6 text-slate-100">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-body font-bold mb-6 text-slate-100">
               {t('support.title')}
             </h1>
             <p className="text-xl text-slate-300 mb-8 font-body leading-relaxed">
@@ -226,7 +226,7 @@ export default function SupportPage() {
       <Section>
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-display font-bold text-slate-100 mb-4">
+            <h2 className="text-3xl font-body font-bold text-slate-100 mb-4">
               Documentation
             </h2>
             <p className="text-xl text-slate-300 font-body">
@@ -266,7 +266,7 @@ export default function SupportPage() {
       <Section className="bg-slate-900">
         <Container>
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-display font-bold text-slate-100 mb-4">
+            <h2 className="text-3xl font-body font-bold text-slate-100 mb-4">
               Frequently Asked Questions
             </h2>
             <p className="text-xl text-slate-300 font-body">
@@ -326,7 +326,7 @@ export default function SupportPage() {
           {filteredFAQs.length === 0 && (
             <div className="text-center py-12">
               <HelpCircle className="w-16 h-16 text-slate-500 mx-auto mb-4" />
-              <p className="text-slate-400 font-body">No results found for "{searchQuery}"</p>
+              <p className="text-slate-400 font-body">No results found for &ldquo;{searchQuery}&rdquo;</p>
               <Button
                 variant="outline"
                 size="sm"
@@ -346,7 +346,7 @@ export default function SupportPage() {
           <div className="max-w-4xl mx-auto">
             <Card>
               <div className="text-center mb-8">
-                <h2 className="text-3xl font-display font-bold text-slate-100 mb-4">
+                <h2 className="text-3xl font-body font-bold text-slate-100 mb-4">
                   {t('support.contact.title')}
                 </h2>
                 <p className="text-lg text-slate-300 font-body">

@@ -1,9 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, Play, Zap, BarChart3, Users, Target, Wifi, Smartphone } from 'lucide-react';
+import Image from 'next/image';
+import { Zap, BarChart3, Users, Target, Wifi, ChevronDown } from 'lucide-react';
 import { useI18n } from '@/locales/client';
-import { Button, Container, Section, Card, CardIcon, CardTitle, CardDescription, Logo } from '@/components/ui';
+import { Container, Section, Card, CardIcon, CardTitle, CardDescription, Logo } from '@/components/ui';
 
 export default function HomePage() {
   const t = useI18n();
@@ -64,11 +65,6 @@ export default function HomePage() {
     }
   ];
 
-  const stats = [
-    { value: '1,000+', label: t('home.hero.statsGames') },
-    { value: '500+', label: t('home.hero.statsCoaches') },
-    { value: '50+', label: t('home.hero.statsFeatures') }
-  ];
 
   return (
     <>
@@ -78,7 +74,7 @@ export default function HomePage() {
       </Link>
 
       {/* Hero Section */}
-      <Section variant="hero" className="relative overflow-hidden bg-bg-primary">
+      <Section variant="content" spacing="xl" className="relative overflow-hidden bg-bg-primary min-h-[80vh] flex items-center">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-800/20 to-slate-950" />
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-400/5 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-lime-400/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }} />
@@ -86,51 +82,28 @@ export default function HomePage() {
         <Container className="relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             {/* Hero Title */}
-            <Logo className="text-5xl sm:text-7xl lg:text-8xl font-display font-bold mb-6 text-shadow-lg" />
+            <Logo className="text-4xl sm:text-6xl lg:text-7xl mb-4 text-shadow-lg" />
             
             {/* Hero Subtitle */}
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl text-text-primary mb-6 font-body font-semibold">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl text-text-primary mb-4 font-body font-semibold">
               {t('home.hero.subtitle')}
             </h2>
             
             {/* Hero Description */}
-            <p className="text-lg sm:text-xl text-text-secondary max-w-3xl mx-auto mb-10 leading-relaxed font-body">
+            <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto mb-6 leading-relaxed font-body">
               {t('home.hero.description')}
             </p>
             
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button 
-                size="xl" 
-                variant="primary"
-                className="group shadow-indigo"
-              >
-                {t('home.hero.ctaPrimary')}
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-              </Button>
-              
-              <Button 
-                variant="secondary" 
-                size="xl"
-                className="group"
-              >
-                <Play className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
-                {t('home.hero.ctaSecondary')}
-              </Button>
+            {/* Coming Soon Badge */}
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-600/20 border border-indigo-400/30 mb-4">
+              <span className="text-indigo-300 font-body font-medium text-sm">Coming Soon - Stay Tuned!</span>
             </div>
             
-            {/* Stats */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center bg-white/5 p-4 rounded-lg border border-white/10">
-                  <div className="text-3xl sm:text-4xl font-bold text-text-primary mb-2 font-body">
-                    {stat.value}
-                  </div>
-                  <div className="text-text-muted text-sm font-body uppercase tracking-wider">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
+            {/* Subtle scroll indicator */}
+            <div className="flex justify-center mt-6">
+              <div className="animate-bounce">
+                <ChevronDown className="w-6 h-6 text-slate-400/60" />
+              </div>
             </div>
           </div>
         </Container>
@@ -142,17 +115,19 @@ export default function HomePage() {
           <div className="text-center">
             <div className="inline-block bg-slate-800/50 backdrop-blur-sm rounded-3xl p-6 shadow-2xl border border-slate-700/50">
               <div className="relative rounded-2xl overflow-hidden shadow-xl max-w-xs mx-auto bg-black">
-                <img 
+                <Image 
                   src="/images/screenshots/app/player-positioning-kultsa-pepo.png" 
                   alt="MatchOps Local tactical board showing live match between Kultsa and PePo Purppura with player positions and real-time score 2-4"
+                  width={375}
+                  height={812}
                   className="w-full h-auto block"
-                  loading="eager"
+                  priority
                   style={{ imageRendering: 'crisp-edges' }}
                 />
               </div>
               <div className="mt-4">
-                <p className="text-slate-100 font-semibold text-lg font-body">Live Tactical Board in Action</p>
-                <p className="text-slate-300 text-sm mt-1 font-body">Real match data • Interactive positioning • Professional tools</p>
+                <p className="text-slate-100 font-semibold text-lg font-body">{t('home.hero.appPreview.title')}</p>
+                <p className="text-slate-300 text-sm mt-1 font-body">{t('home.hero.appPreview.subtitle')}</p>
               </div>
             </div>
           </div>
@@ -163,7 +138,7 @@ export default function HomePage() {
       <Section id="main-content" spacing="xl">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-text-primary mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-body font-bold text-text-primary mb-4">
               {t('home.features.title')}
             </h2>
             <p className="text-xl text-text-secondary max-w-2xl mx-auto font-body">
@@ -193,7 +168,7 @@ export default function HomePage() {
       <Section className="bg-gradient-to-b from-transparent to-bg-secondary/50">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-text-primary mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-body font-bold text-text-primary mb-4">
               {t('home.howItWorks.title')}
             </h2>
           </div>
@@ -221,60 +196,6 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* Social Proof Section */}
-      <Section>
-        <Container>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-display font-bold text-text-primary mb-4">
-              {t('home.testimonials.title')}
-            </h2>
-            <p className="text-xl text-text-secondary">
-              {t('home.testimonials.subtitle')}
-            </p>
-          </div>
-          
-          <Card variant="testimonial" className="max-w-3xl mx-auto">
-            <blockquote className="text-lg sm:text-xl text-text-primary italic mb-6 leading-relaxed">
-              "{t('home.testimonials.placeholder.quote')}"
-            </blockquote>
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-lime-400 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
-                {t('home.testimonials.placeholder.author').charAt(0)}
-              </div>
-              <div>
-                <div className="font-semibold text-text-primary">
-                  {t('home.testimonials.placeholder.author')}
-                </div>
-                <div className="text-text-secondary text-sm">
-                  {t('home.testimonials.placeholder.team')}
-                </div>
-              </div>
-            </div>
-          </Card>
-        </Container>
-      </Section>
-
-      {/* Final CTA Section */}
-      <Section className="bg-gradient-to-r from-indigo-600 to-violet-600">
-        <Container>
-          <div className="text-center text-white">
-            <h2 className="text-3xl sm:text-4xl font-display font-bold mb-4">
-              Ready to Transform Your Coaching?
-            </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Join hundreds of coaches who are already using MatchOps Local to improve their game management.
-            </p>
-            <Button 
-              variant="secondary" 
-              size="xl"
-              className="bg-white text-primary-indigo hover:bg-gray-100"
-            >
-              {t('home.hero.ctaPrimary')}
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </div>
-        </Container>
-      </Section>
     </>
   );
 }

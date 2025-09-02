@@ -1,7 +1,7 @@
 'use client';
 
-import Link from 'next/link';
-import { ArrowRight, Target, BarChart3, Users, Zap, Wifi, Smartphone, Shield, Clock, Trophy, Settings, FileText, Calendar } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowRight, Target, BarChart3, Users, Zap, Wifi, Smartphone, Shield, Clock, Trophy, Settings, Calendar } from 'lucide-react';
 import { useI18n } from '@/locales/client';
 import { Button, Container, Section, Card, CardIcon, CardTitle, CardDescription } from '@/components/ui';
 
@@ -12,22 +12,22 @@ export default function FeaturesPage() {
     {
       id: 'tactics',
       title: t('features.categories.tactics'),
-      description: 'Plan formations, draw plays, and create winning strategies',
+      description: t('features.tactics.description'),
       icon: Target,
       color: 'cyan',
       features: [
         {
           icon: Settings,
-          title: 'Player Positioning',
-          description: 'Drag-and-drop player positioning with real-time formation management during matches.',
-          benefits: ['Live player positioning', 'Real-time formation updates', 'Instant tactical adjustments', 'Interactive field management'],
+          title: t('features.tactics.playerPositioning.title'),
+          description: t('features.tactics.playerPositioning.description'),
+          benefits: ['features.tactics.playerPositioning.benefits.0', 'features.tactics.playerPositioning.benefits.1', 'features.tactics.playerPositioning.benefits.2', 'features.tactics.playerPositioning.benefits.3'],
           image: '/features/formations.png'
         },
         {
           icon: Target,
-          title: 'Tactical Drawing Board',
-          description: 'Interactive drawing tools for creating tactical plays, arrows, and strategic diagrams.',
-          benefits: ['Draw tactical lines and arrows', 'Create set piece plays', 'Save diagrams (planned)', 'Export features (planned)'],
+          title: t('features.tactics.tacticalDrawing.title'),
+          description: t('features.tactics.tacticalDrawing.description'),
+          benefits: ['features.tactics.tacticalDrawing.benefits.0', 'features.tactics.tacticalDrawing.benefits.1', 'features.tactics.tacticalDrawing.benefits.2', 'features.tactics.tacticalDrawing.benefits.3'],
           image: '/features/tactical-field.png'
         }
       ]
@@ -35,29 +35,29 @@ export default function FeaturesPage() {
     {
       id: 'statistics',
       title: t('features.categories.statistics'),
-      description: 'Track performance with detailed analytics and reporting',
+      description: t('features.statistics.description'),
       icon: BarChart3,
       color: 'lime',
       features: [
         {
           icon: BarChart3,
-          title: 'Competition Statistics',
-          description: 'Track team performance across seasons, tournaments, and competitions.',
-          benefits: ['Competition overview data', 'Tournament & season tracking', 'Team performance trends', 'Long-term analysis (planned)'],
+          title: t('features.statistics.competitionStats.title'),
+          description: t('features.statistics.competitionStats.description'),
+          benefits: ['features.statistics.competitionStats.benefits.0', 'features.statistics.competitionStats.benefits.1', 'features.statistics.competitionStats.benefits.2', 'features.statistics.competitionStats.benefits.3'],
           image: '/features/season-stats.png'
         },
         {
           icon: Trophy,
-          title: 'Player Performance Analysis',
-          description: 'Detailed individual player statistics and development tracking.',
-          benefits: ['Individual player metrics', 'Personal development tracking', 'Performance comparisons', 'Progress monitoring'],
+          title: t('features.statistics.playerAnalysis.title'),
+          description: t('features.statistics.playerAnalysis.description'),
+          benefits: ['features.statistics.playerAnalysis.benefits.0', 'features.statistics.playerAnalysis.benefits.1', 'features.statistics.playerAnalysis.benefits.2', 'features.statistics.playerAnalysis.benefits.3'],
           image: '/features/player-analysis.png'
         },
         {
           icon: Clock,
-          title: 'Live Game Tracking',
-          description: 'Real-time event tracking during matches with instant statistics updates.',
-          benefits: ['Live event logging', 'Real-time stats', 'Match timer tracking', 'Event history'],
+          title: t('features.statistics.liveTracking.title'),
+          description: t('features.statistics.liveTracking.description'),
+          benefits: ['features.statistics.liveTracking.benefits.0', 'features.statistics.liveTracking.benefits.1', 'features.statistics.liveTracking.benefits.2', 'features.statistics.liveTracking.benefits.3'],
           image: '/features/live-tracking.png'
         }
       ]
@@ -65,29 +65,29 @@ export default function FeaturesPage() {
     {
       id: 'management',
       title: t('features.categories.management'),
-      description: 'Organize teams, manage players, and coordinate game day',
+      description: t('features.management.description'),
       icon: Users,
       color: 'violet',
       features: [
         {
           icon: Users,
-          title: 'Team Management',
-          description: 'Complete roster management with player profiles and contact information.',
-          benefits: ['Player profiles', 'Contact management', 'Medical information', 'Parent communication'],
+          title: t('features.management.teamManagement.title'),
+          description: t('features.management.teamManagement.description'),
+          benefits: ['features.management.teamManagement.benefits.0', 'features.management.teamManagement.benefits.1', 'features.management.teamManagement.benefits.2', 'features.management.teamManagement.benefits.3'],
           image: '/features/team-management.png'
         },
         {
           icon: Calendar,
-          title: 'Substitution Manager',
-          description: 'Smart substitution planning with playing time tracking and rotation management.',
-          benefits: ['Equal playing time', 'Smart rotations', 'Position-based subs', 'Playing time reports'],
+          title: t('features.management.substitutions.title'),
+          description: t('features.management.substitutions.description'),
+          benefits: ['features.management.substitutions.benefits.0', 'features.management.substitutions.benefits.1', 'features.management.substitutions.benefits.2', 'features.management.substitutions.benefits.3'],
           image: '/features/substitutions.png'
         },
         {
           icon: Shield,
-          title: 'Game Day Tools',
-          description: 'Essential sideline tools for managing matches effectively.',
-          benefits: ['Digital team sheet', 'Injury tracking', 'Weather conditions', 'Match notes'],
+          title: t('features.management.gameDay.title'),
+          description: t('features.management.gameDay.description'),
+          benefits: ['features.management.gameDay.benefits.0', 'features.management.gameDay.benefits.1', 'features.management.gameDay.benefits.2', 'features.management.gameDay.benefits.3'],
           image: '/features/game-day.png'
         }
       ]
@@ -124,14 +124,14 @@ export default function FeaturesPage() {
       <Section variant="hero" className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
         <Container>
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-6 text-slate-100">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-body font-bold mb-6 text-slate-100">
               {t('features.title')}
             </h1>
             <p className="text-xl text-slate-300 mb-8 font-body leading-relaxed">
               {t('features.subtitle')}
             </p>
             <Button size="lg" className="mb-12">
-              Try All Features Free
+              {t('features.buttons.tryAllFeatures')}
               <ArrowRight className="w-5 h-5" />
             </Button>
           </div>
@@ -147,7 +147,7 @@ export default function FeaturesPage() {
               <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${getColorClasses(category.color).bg} ${getColorClasses(category.color).border} border mb-6`}>
                 <category.icon className={`w-8 h-8 ${getColorClasses(category.color).text}`} />
               </div>
-              <h2 className="text-3xl sm:text-4xl font-display font-bold text-slate-100 mb-4">
+              <h2 className="text-3xl sm:text-4xl font-body font-bold text-slate-100 mb-4">
                 {category.title}
               </h2>
               <p className="text-xl text-slate-300 max-w-2xl mx-auto font-body">
@@ -170,7 +170,7 @@ export default function FeaturesPage() {
                       <div className={`p-3 rounded-lg ${getColorClasses(category.color).bg}`}>
                         <feature.icon className={`w-6 h-6 ${getColorClasses(category.color).text}`} />
                       </div>
-                      <h3 className="text-2xl font-display font-bold text-slate-100">
+                      <h3 className="text-2xl font-body font-bold text-slate-100">
                         {feature.title}
                       </h3>
                     </div>
@@ -190,7 +190,7 @@ export default function FeaturesPage() {
                     </div>
 
                     <Button variant="outline" size="md">
-                      Learn More
+                      {t('features.buttons.learnMore')}
                       <ArrowRight className="w-4 h-4" />
                     </Button>
                   </div>
@@ -201,70 +201,80 @@ export default function FeaturesPage() {
                       <div className="flex justify-center">
                         <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
                           <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
-                            <img 
+                            <Image 
                               src="/features/player-positioning-live-match.png" 
                               alt="MatchOps Local player positioning interface showing live match between Kultsa and PePo Purppura with real-time player positions"
+                              width={288}
+                              height={624}
                               className="w-full h-auto block"
                               style={{ imageRendering: 'crisp-edges' }}
                             />
                           </div>
-                          <p className="text-slate-300 text-xs mt-2 text-center font-body">Live match positioning</p>
+                          <p className="text-slate-300 text-xs mt-2 text-center font-body">{t('features.tactics.playerPositioning.caption')}</p>
                         </div>
                       </div>
                     ) : feature.title === 'Tactical Drawing Board' ? (
                       <div className="flex justify-center">
                         <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
                           <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
-                            <img 
+                            <Image 
                               src="/features/tactical-drawing-board.png" 
                               alt="MatchOps Local tactical drawing interface showing orange tactical arrows and play diagrams drawn on soccer field"
+                              width={288}
+                              height={624}
                               className="w-full h-auto block"
                               style={{ imageRendering: 'crisp-edges' }}
                             />
                           </div>
-                          <p className="text-slate-300 text-xs mt-2 text-center font-body">Tactical play design</p>
+                          <p className="text-slate-300 text-xs mt-2 text-center font-body">{t('features.tactics.tacticalDrawing.caption')}</p>
                         </div>
                       </div>
                     ) : feature.title === 'Competition Statistics' ? (
                       <div className="flex justify-center">
                         <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
                           <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
-                            <img 
+                            <Image 
                               src="/features/competition-statistics.png" 
                               alt="MatchOps Local competition statistics showing EKK Kartteli 2025 team performance with 78.9% win rate and player statistics"
+                              width={288}
+                              height={624}
                               className="w-full h-auto block"
                               style={{ imageRendering: 'crisp-edges' }}
                             />
                           </div>
-                          <p className="text-slate-300 text-xs mt-2 text-center font-body">Competition performance data</p>
+                          <p className="text-slate-300 text-xs mt-2 text-center font-body">{t('features.statistics.competitionStats.caption')}</p>
                         </div>
                       </div>
                     ) : feature.title === 'Player Performance Analysis' ? (
                       <div className="flex justify-center">
                         <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
                           <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
-                            <img 
+                            <Image 
                               src="/features/player-performance-analysis.png" 
                               alt="MatchOps Local player performance analysis showing Jooa Pajala individual statistics with 47 matches, 38 goals, 16 assists and performance graphs"
+                              width={288}
+                              height={624}
                               className="w-full h-auto block"
                               style={{ imageRendering: 'crisp-edges' }}
                             />
                           </div>
-                          <p className="text-slate-300 text-xs mt-2 text-center font-body">Individual player development</p>
+                          <p className="text-slate-300 text-xs mt-2 text-center font-body">{t('features.statistics.playerAnalysis.caption')}</p>
                         </div>
                       </div>
                     ) : feature.title === 'Live Game Tracking' ? (
                       <div className="flex justify-center">
                         <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
                           <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
-                            <img 
+                            <Image 
                               src="/features/live-game-tracking.png" 
                               alt="MatchOps Local live game tracking interface showing PePo Lila vs LaPa match with real-time timer at 02:16, live events, and action buttons"
+                              width={288}
+                              height={624}
                               className="w-full h-auto block"
                               style={{ imageRendering: 'crisp-edges' }}
                             />
                           </div>
-                          <p className="text-slate-300 text-xs mt-2 text-center font-body">Real-time match tracking</p>
+                          <p className="text-slate-300 text-xs mt-2 text-center font-body">{t('features.statistics.liveTracking.caption')}</p>
                         </div>
                       </div>
                     ) : (
@@ -272,7 +282,7 @@ export default function FeaturesPage() {
                         <div className="text-center">
                           <Smartphone className={`w-16 h-16 mx-auto mb-4 ${getColorClasses(category.color).text} group-hover:scale-110 transition-transform duration-300`} />
                           <p className="text-slate-400 font-body">{feature.title} Screenshot</p>
-                          <p className="text-slate-500 text-sm mt-2 font-body">Coming Soon</p>
+                          <p className="text-slate-500 text-sm mt-2 font-body">{t('features.buttons.comingSoon')}</p>
                         </div>
                       </div>
                     )}
@@ -288,11 +298,11 @@ export default function FeaturesPage() {
       <Section className="bg-slate-900">
         <Container>
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-display font-bold text-slate-100 mb-4">
-              Technical Features
+            <h2 className="text-3xl font-body font-bold text-slate-100 mb-4">
+              {t('features.technical.title')}
             </h2>
             <p className="text-xl text-slate-300 font-body">
-              Built with performance and reliability in mind
+              {t('features.technical.subtitle')}
             </p>
           </div>
 
@@ -301,9 +311,9 @@ export default function FeaturesPage() {
               <CardIcon className="mx-auto group-hover:text-cyan-400 transition-colors duration-300">
                 <Wifi className="w-8 h-8" />
               </CardIcon>
-              <CardTitle>Works Offline</CardTitle>
+              <CardTitle>{t('features.technical.offline.title')}</CardTitle>
               <CardDescription>
-                Full functionality without internet connection. Perfect for any playing field.
+                {t('features.technical.offline.description')}
               </CardDescription>
             </Card>
 
@@ -311,9 +321,9 @@ export default function FeaturesPage() {
               <CardIcon className="mx-auto group-hover:text-lime-400 transition-colors duration-300">
                 <Zap className="w-8 h-8" />
               </CardIcon>
-              <CardTitle>Lightning Fast</CardTitle>
+              <CardTitle>{t('features.technical.fast.title')}</CardTitle>
               <CardDescription>
-                Optimized performance for instant response during critical game moments.
+                {t('features.technical.fast.description')}
               </CardDescription>
             </Card>
 
@@ -321,9 +331,9 @@ export default function FeaturesPage() {
               <CardIcon className="mx-auto group-hover:text-violet-400 transition-colors duration-300">
                 <Shield className="w-8 h-8" />
               </CardIcon>
-              <CardTitle>Secure & Private</CardTitle>
+              <CardTitle>{t('features.technical.secure.title')}</CardTitle>
               <CardDescription>
-                Your team data stays private with local storage and optional cloud sync.
+                {t('features.technical.secure.description')}
               </CardDescription>
             </Card>
           </div>
@@ -334,19 +344,19 @@ export default function FeaturesPage() {
       <Section className="bg-gradient-to-r from-indigo-600 to-violet-600">
         <Container>
           <div className="text-center text-white">
-            <h2 className="text-3xl sm:text-4xl font-display font-bold mb-4">
-              Ready to Elevate Your Coaching?
+            <h2 className="text-3xl sm:text-4xl font-body font-bold mb-4">
+              {t('features.cta.title')}
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto font-body">
-              Experience all these features in action. Start your free trial today.
+              {t('features.cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="secondary" size="xl" className="bg-white text-indigo-600 hover:bg-gray-100">
-                Try Free Now
+                {t('features.cta.tryNow')}
                 <ArrowRight className="w-5 h-5" />
               </Button>
               <Button variant="outline" size="xl" className="border-white text-white hover:bg-white/10">
-                Watch Demo
+                {t('features.cta.watchDemo')}
               </Button>
             </div>
           </div>

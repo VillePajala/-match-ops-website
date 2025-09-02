@@ -1,6 +1,6 @@
 'use client';
 
-import { Shield, FileText, Scale, AlertTriangle, CheckCircle, Mail, Calendar } from 'lucide-react';
+import { Scale, AlertTriangle, CheckCircle, Mail, Calendar } from 'lucide-react';
 import { Container, Section } from '@/components/ui';
 
 export default function TermsPage() {
@@ -15,7 +15,7 @@ export default function TermsPage() {
             <div className="w-16 h-16 bg-violet-400/20 rounded-full flex items-center justify-center mx-auto mb-6">
               <Scale className="w-10 h-10 text-violet-400" />
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-6 text-slate-100">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-body font-bold mb-6 text-slate-100">
               Terms of Service
             </h1>
             <p className="text-xl text-slate-300 mb-8 font-body leading-relaxed">
@@ -47,10 +47,10 @@ export default function TermsPage() {
 
             <div className="space-y-12">
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">1. Acceptance of Terms</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">1. Acceptance of Terms</h2>
                 <p className="text-slate-300 font-body mb-4">
-                  By accessing and using MatchOps Local ("the Service"), you accept and agree to be bound by the terms 
-                  and provision of this agreement. These Terms of Service ("Terms") apply to all users of the Service, 
+                  By accessing and using MatchOps Local (&ldquo;the Service&rdquo;), you accept and agree to be bound by the terms 
+                  and provision of this agreement. These Terms of Service (&ldquo;Terms&rdquo;) apply to all users of the Service, 
                   including coaches, team administrators, and any other individuals who access or use the Service.
                 </p>
                 <p className="text-slate-300 font-body">
@@ -60,7 +60,7 @@ export default function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">2. Description of Service</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">2. Description of Service</h2>
                 <p className="text-slate-300 font-body mb-4">
                   MatchOps Local is a Progressive Web Application designed to help soccer coaches manage their teams, 
                   plan tactics, track player performance, and organize match day operations. The Service includes:
@@ -76,7 +76,7 @@ export default function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">3. User Accounts and Registration</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">3. User Accounts and Registration</h2>
                 
                 <h3 className="text-xl font-semibold text-slate-100 mb-3 font-body">Account Creation</h3>
                 <ul className="list-disc pl-6 space-y-2 text-slate-300 font-body mb-6">
@@ -96,7 +96,7 @@ export default function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">4. Acceptable Use Policy</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">4. Acceptable Use Policy</h2>
                 
                 <div className="bg-slate-800 border border-slate-600 rounded-lg p-6 mb-6">
                   <div className="flex items-start gap-4">
@@ -126,7 +126,7 @@ export default function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">5. Data and Privacy</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">5. Data and Privacy</h2>
                 
                 <h3 className="text-xl font-semibold text-slate-100 mb-3 font-body">Your Data</h3>
                 <ul className="list-disc pl-6 space-y-2 text-slate-300 font-body mb-6">
@@ -153,7 +153,7 @@ export default function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">6. Intellectual Property Rights</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">6. Intellectual Property Rights</h2>
                 
                 <h3 className="text-xl font-semibold text-slate-100 mb-3 font-body">Our Rights</h3>
                 <p className="text-slate-300 font-body mb-4">
@@ -175,7 +175,7 @@ export default function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">7. Service Availability</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">7. Service Availability</h2>
                 <p className="text-slate-300 font-body mb-4">
                   While we strive to provide reliable service, we cannot guarantee:
                 </p>
@@ -193,7 +193,7 @@ export default function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">8. Limitation of Liability</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">8. Limitation of Liability</h2>
                 
                 <div className="bg-slate-800 border border-slate-600 rounded-lg p-6 mb-6">
                   <div className="flex items-start gap-4">
@@ -201,7 +201,7 @@ export default function TermsPage() {
                     <div>
                       <h3 className="text-lg font-semibold text-slate-100 mb-2 font-body">Important Legal Notice</h3>
                       <p className="text-slate-300 font-body">
-                        The Service is provided "as is" and "as available" without warranties of any kind. Your use 
+                        The Service is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without warranties of any kind. Your use 
                         of the Service is at your own risk.
                       </p>
                     </div>
@@ -221,7 +221,7 @@ export default function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">9. Indemnification</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">9. Indemnification</h2>
                 <p className="text-slate-300 font-body">
                   You agree to indemnify and hold us harmless from any claims, losses, damages, or expenses arising from:
                 </p>
@@ -235,7 +235,7 @@ export default function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">10. Termination</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">10. Termination</h2>
                 
                 <h3 className="text-xl font-semibold text-slate-100 mb-3 font-body">By You</h3>
                 <p className="text-slate-300 font-body mb-4">
@@ -261,7 +261,7 @@ export default function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">11. Governing Law</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">11. Governing Law</h2>
                 <p className="text-slate-300 font-body">
                   These Terms shall be governed by and construed in accordance with the laws of the United States, 
                   without regard to conflict of law principles. Any disputes arising from these Terms or your use of 
@@ -270,12 +270,12 @@ export default function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">12. Changes to Terms</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">12. Changes to Terms</h2>
                 <p className="text-slate-300 font-body mb-4">
                   We may modify these Terms at any time. When we make changes, we will:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 text-slate-300 font-body mb-4">
-                  <li>Update the "Last updated" date at the top of this page</li>
+                  <li>Update the &ldquo;Last updated&rdquo; date at the top of this page</li>
                   <li>Post the updated Terms on our website</li>
                   <li>Notify users through the app (for significant changes)</li>
                   <li>Send email notifications (if you have an account)</li>
@@ -286,7 +286,7 @@ export default function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">13. Contact Information</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">13. Contact Information</h2>
                 <p className="text-slate-300 font-body mb-4">
                   If you have questions about these Terms of Service, please contact us:
                 </p>
@@ -312,7 +312,7 @@ export default function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">14. Severability</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">14. Severability</h2>
                 <p className="text-slate-300 font-body">
                   If any provision of these Terms is found to be unenforceable or invalid, that provision will be 
                   limited or eliminated to the minimum extent necessary so that these Terms will otherwise remain 
@@ -321,7 +321,7 @@ export default function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-display font-bold text-slate-100 mb-4">15. Entire Agreement</h2>
+                <h2 className="text-2xl font-body font-bold text-slate-100 mb-4">15. Entire Agreement</h2>
                 <p className="text-slate-300 font-body">
                   These Terms, together with our Privacy Policy, constitute the entire agreement between you and us 
                   regarding the use of the Service. These Terms supersede any prior agreements or understandings 

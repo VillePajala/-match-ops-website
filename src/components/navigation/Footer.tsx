@@ -59,7 +59,7 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <Link href={`/${currentLocale}`} className="inline-block focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded-md">
-              <Logo size="sm" />
+              <Logo className="text-2xl" />
             </Link>
             <p className="mt-4 text-text-secondary leading-relaxed">
               {t('footer.description')}
