@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { ArrowRight, Target, BarChart3, Users, Zap, Wifi, Smartphone, Shield, Clock, Trophy, Settings, Calendar } from 'lucide-react';
+import { ArrowRight, Target, BarChart3, Users, Zap, Wifi, Smartphone, Shield, Clock, Trophy, Settings, Calendar, Download, Upload, Star } from 'lucide-react';
 import { useI18n } from '@/locales/client';
 import { Button, Container, Section, Card, CardIcon, CardTitle, CardDescription } from '@/components/ui';
 
@@ -71,24 +71,31 @@ export default function FeaturesPage() {
       features: [
         {
           icon: Users,
-          title: t('features.management.teamManagement.title'),
-          description: t('features.management.teamManagement.description'),
-          benefits: ['features.management.teamManagement.benefits.0', 'features.management.teamManagement.benefits.1', 'features.management.teamManagement.benefits.2', 'features.management.teamManagement.benefits.3'],
-          image: '/features/team-management.png'
+          title: t('features.management.teamRoster.title'),
+          description: t('features.management.teamRoster.description'),
+          benefits: ['features.management.teamRoster.benefits.0', 'features.management.teamRoster.benefits.1', 'features.management.teamRoster.benefits.2', 'features.management.teamRoster.benefits.3'],
+          image: '/screenshots/team and roster management feature.png'
         },
         {
           icon: Calendar,
-          title: t('features.management.substitutions.title'),
-          description: t('features.management.substitutions.description'),
-          benefits: ['features.management.substitutions.benefits.0', 'features.management.substitutions.benefits.1', 'features.management.substitutions.benefits.2', 'features.management.substitutions.benefits.3'],
-          image: '/features/substitutions.png'
+          title: t('features.management.seasonTournament.title'),
+          description: t('features.management.seasonTournament.description'),
+          benefits: ['features.management.seasonTournament.benefits.0', 'features.management.seasonTournament.benefits.1', 'features.management.seasonTournament.benefits.2', 'features.management.seasonTournament.benefits.3'],
+          image: '/screenshots/seasonandtournamentmanagement.png'
         },
         {
           icon: Shield,
-          title: t('features.management.gameDay.title'),
-          description: t('features.management.gameDay.description'),
-          benefits: ['features.management.gameDay.benefits.0', 'features.management.gameDay.benefits.1', 'features.management.gameDay.benefits.2', 'features.management.gameDay.benefits.3'],
-          image: '/features/game-day.png'
+          title: t('features.management.gameStorage.title'),
+          description: t('features.management.gameStorage.description'),
+          benefits: ['features.management.gameStorage.benefits.0', 'features.management.gameStorage.benefits.1', 'features.management.gameStorage.benefits.2', 'features.management.gameStorage.benefits.3'],
+          image: '/screenshots/Saver and load gamespng.png'
+        },
+        {
+          icon: Star,
+          title: t('features.management.playerAssessment.title'),
+          description: t('features.management.playerAssessment.description'),
+          benefits: ['features.management.playerAssessment.benefits.0', 'features.management.playerAssessment.benefits.1', 'features.management.playerAssessment.benefits.2', 'features.management.playerAssessment.benefits.3'],
+          image: '/screenshots/palyerassesments.png'
         }
       ]
     }
@@ -277,6 +284,70 @@ export default function FeaturesPage() {
                           <p className="text-slate-300 text-xs mt-2 text-center font-body">{t('features.statistics.liveTracking.caption')}</p>
                         </div>
                       </div>
+                    ) : feature.title === 'Team & Roster Management' ? (
+                      <div className="flex justify-center">
+                        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
+                          <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
+                            <Image 
+                              src="/screenshots/team and roster management feature.png" 
+                              alt="MatchOps Local team and roster management interface showing player profiles with names, nicknames, jersey numbers and skill assessments"
+                              width={288}
+                              height={624}
+                              className="w-full h-auto block"
+                              style={{ imageRendering: 'crisp-edges' }}
+                            />
+                          </div>
+                          <p className="text-slate-300 text-xs mt-2 text-center font-body">{t('features.management.teamRoster.caption')}</p>
+                        </div>
+                      </div>
+                    ) : feature.title === 'Season & Tournament Management' ? (
+                      <div className="flex justify-center">
+                        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
+                          <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
+                            <Image 
+                              src="/screenshots/seasonandtournamentmanagement.png" 
+                              alt="MatchOps Local season and tournament management interface showing season creation, tournament setup and game organization"
+                              width={288}
+                              height={624}
+                              className="w-full h-auto block"
+                              style={{ imageRendering: 'crisp-edges' }}
+                            />
+                          </div>
+                          <p className="text-slate-300 text-xs mt-2 text-center font-body">{t('features.management.seasonTournament.caption')}</p>
+                        </div>
+                      </div>
+                    ) : feature.title === 'Save & Load Games' ? (
+                      <div className="flex justify-center">
+                        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
+                          <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
+                            <Image 
+                              src="/screenshots/Saver and load gamespng.png" 
+                              alt="MatchOps Local save and load games interface showing one-click saves, auto-resume and complete game state preservation"
+                              width={288}
+                              height={624}
+                              className="w-full h-auto block"
+                              style={{ imageRendering: 'crisp-edges' }}
+                            />
+                          </div>
+                          <p className="text-slate-300 text-xs mt-2 text-center font-body">{t('features.management.gameStorage.caption')}</p>
+                        </div>
+                      </div>
+                    ) : feature.title === 'Player Assessment & Rating System' ? (
+                      <div className="flex justify-center">
+                        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
+                          <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
+                            <Image 
+                              src="/screenshots/palyerassesments.png" 
+                              alt="MatchOps Local player assessment and rating system showing 10-skill evaluation with intensity, courage, technique ratings"
+                              width={288}
+                              height={624}
+                              className="w-full h-auto block"
+                              style={{ imageRendering: 'crisp-edges' }}
+                            />
+                          </div>
+                          <p className="text-slate-300 text-xs mt-2 text-center font-body">{t('features.management.playerAssessment.caption')}</p>
+                        </div>
+                      </div>
                     ) : (
                       <div className="bg-slate-800 border border-slate-600 rounded-xl p-8 aspect-video flex items-center justify-center group hover:border-slate-500 transition-colors duration-300">
                         <div className="text-center">
@@ -306,7 +377,7 @@ export default function FeaturesPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             <Card className="text-center group">
               <CardIcon className="mx-auto group-hover:text-cyan-400 transition-colors duration-300">
                 <Wifi className="w-8 h-8" />
@@ -334,6 +405,26 @@ export default function FeaturesPage() {
               <CardTitle>{t('features.technical.secure.title')}</CardTitle>
               <CardDescription>
                 {t('features.technical.secure.description')}
+              </CardDescription>
+            </Card>
+
+            <Card className="text-center group">
+              <CardIcon className="mx-auto group-hover:text-orange-400 transition-colors duration-300">
+                <Smartphone className="w-8 h-8" />
+              </CardIcon>
+              <CardTitle>{t('features.technical.pwa.title')}</CardTitle>
+              <CardDescription>
+                {t('features.technical.pwa.description')}
+              </CardDescription>
+            </Card>
+
+            <Card className="text-center group">
+              <CardIcon className="mx-auto group-hover:text-green-400 transition-colors duration-300">
+                <Download className="w-8 h-8" />
+              </CardIcon>
+              <CardTitle>{t('features.technical.dataPortability.title')}</CardTitle>
+              <CardDescription>
+                {t('features.technical.dataPortability.description')}
               </CardDescription>
             </Card>
           </div>

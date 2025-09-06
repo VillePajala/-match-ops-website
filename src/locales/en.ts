@@ -16,7 +16,7 @@ export default {
     hero: {
       title: 'MatchOps Local',
       subtitle: 'Professional Soccer Coaching Made Simple',
-      description: 'The complete sideline management tool for soccer coaches. Plan tactics, track statistics, and manage your team with professional-grade features in one intuitive app.',
+      description: 'The sideline management tool for soccer coaches. Plan tactics, track statistics, and manage your team with intuitive features in one app.',
       ctaPrimary: 'Try Free Now',
       ctaSecondary: 'Learn More',
       statsGames: 'Games Tracked',
@@ -24,12 +24,12 @@ export default {
       statsFeatures: 'Features Available',
       appPreview: {
         title: 'Live Tactical Board in Action',
-        subtitle: 'Real match data • Interactive positioning • Professional tools'
+        subtitle: 'Real match data • Interactive positioning • Coaching tools'
       }
     },
     features: {
       title: 'Everything You Need for Match Day',
-      subtitle: 'Professional coaching tools that work the way you coach',
+      subtitle: 'Coaching tools that work the way you coach',
       interactive: {
         title: 'Interactive Soccer Field',
         description: 'Plan formations, draw tactics, and position players with our touch-friendly field interface.'
@@ -37,10 +37,6 @@ export default {
       statistics: {
         title: 'Advanced Statistics',
         description: 'Track player performance, game events, and team analytics with detailed reporting.'
-      },
-      management: {
-        title: 'Team Management',
-        description: 'Organize rosters, manage substitutions, and coordinate player rotations seamlessly.'
       },
       realtime: {
         title: 'Live Game Tracking',
@@ -50,9 +46,21 @@ export default {
         title: 'Performance Analysis',
         description: 'Review game data, identify patterns, and improve team performance over time.'
       },
+      teamManagement: {
+        title: 'Team & Roster Management',
+        description: 'Build and organize your team roster with detailed player profiles and performance tracking.'
+      },
+      seasonManagement: {
+        title: 'Season & Tournament Management',
+        description: 'Create seasons and tournaments to organize your games and track performance over time.'
+      },
+      gameStorage: {
+        title: 'Save & Load Games',
+        description: 'Save complete match sessions locally and reload them anytime for review or to continue play.'
+      },
       offline: {
         title: 'Works Offline',
-        description: 'Access all features without internet connection. Perfect for any playing field.'
+        description: 'Access all features without internet connection. Works on any playing field.'
       }
     },
     howItWorks: {
@@ -91,8 +99,8 @@ export default {
     subtitle: 'Discover all the tools that make MatchOps Local the ultimate coaching companion',
     categories: {
       tactics: 'Tactical Planning',
-      statistics: 'Statistics & Analytics', 
-      management: 'Team Management'
+      statistics: 'Statistics & Analytics',
+      management: 'Team & Data Management'
     },
     tactics: {
       description: 'Plan formations, draw plays, and create winning strategies',
@@ -145,47 +153,61 @@ export default {
       },
       liveTracking: {
         title: 'Live Game Tracking',
-        description: 'Real-time event tracking during matches with instant statistics updates.',
+        description: 'Real-time event tracking during matches with instant statistics updates and smart substitution management.',
         benefits: {
-          0: 'Live event logging',
-          1: 'Real-time stats',
-          2: 'Match timer tracking',
-          3: 'Event history'
+          0: 'Live event logging - Record goals, fouls, and match events in real-time',
+          1: 'Real-time stats - Instant statistics updates and match timer tracking',
+          2: 'Event history - Complete match timeline with detailed event records',
+          3: 'Smart substitution reminders - Fair play compliance and one-click confirmations'
         },
         caption: 'Real-time match tracking'
       }
     },
     management: {
-      description: 'Organize teams, manage players, and coordinate game day',
-      teamManagement: {
-        title: 'Team Management',
-        description: 'Complete roster management with player profiles and contact information.',
+      description: 'Organize teams, manage data, and coordinate your coaching workflow',
+      teamRoster: {
+        title: 'Team & Roster Management',
+        description: 'Build and organize your team roster with detailed player profiles and performance tracking.',
         benefits: {
-          0: 'Player profiles',
-          1: 'Contact management',
-          2: 'Medical information',
-          3: 'Parent communication'
-        }
+          0: 'Player profiles - Names, nicknames, jersey numbers, and notes',
+          1: 'Multi-team support - Manage rosters for different teams',
+          2: 'Goalie management - Designate and track goalkeepers',
+          3: 'Player assessments - Rate players on 10 different skills'
+        },
+        caption: 'Team and roster organization'
       },
-      substitutions: {
-        title: 'Substitution Manager',
-        description: 'Smart substitution planning with playing time tracking and rotation management.',
+      seasonTournament: {
+        title: 'Season & Tournament Management',
+        description: 'Create seasons and tournaments to organize your games and track performance over time.',
         benefits: {
-          0: 'Equal playing time',
-          1: 'Smart rotations',
-          2: 'Position-based subs',
-          3: 'Playing time reports'
-        }
+          0: 'Season creation - Set up seasons with dates and locations',
+          1: 'Tournament setup - Create tournaments with age groups and levels',
+          2: 'Game organization - Link individual games to competitions',
+          3: 'Archive system - Store completed seasons for historical records'
+        },
+        caption: 'Season and tournament tracking'
       },
-      gameDay: {
-        title: 'Game Day Tools',
-        description: 'Essential sideline tools for managing matches effectively.',
+      gameStorage: {
+        title: 'Save & Load Games',
+        description: 'Save complete match sessions locally and reload them anytime for review or to continue play.',
         benefits: {
-          0: 'Digital team sheet',
-          1: 'Injury tracking',
-          2: 'Weather conditions',
-          3: 'Match notes'
-        }
+          0: 'One-click saves - Instantly save current game state',
+          1: 'Auto-resume - Automatically continue your last game session',
+          2: 'Complete preservation - All player positions, scores, and events saved',
+          3: 'Offline storage - No internet required, everything stored locally'
+        },
+        caption: 'Game data management'
+      },
+      playerAssessment: {
+        title: 'Player Assessment & Rating System',
+        description: '10-skill player evaluation system with comprehensive rating and development tracking.',
+        benefits: {
+          0: '10-skill player evaluation system (intensity, courage, technique, creativity, etc.)',
+          1: 'Overall player ratings on 1-10 scale',
+          2: 'Assessment history and development tracking over time',
+          3: 'Detailed skill breakdown and progress monitoring'
+        },
+        caption: 'Player assessment and rating system'
       }
     },
     technical: {
@@ -202,6 +224,14 @@ export default {
       secure: {
         title: 'Secure & Private',
         description: 'Your team data stays private with local storage and optional cloud sync.'
+      },
+      pwa: {
+        title: 'PWA Installation',
+        description: 'Install as a native app on any device with Progressive Web App technology.'
+      },
+      dataPortability: {
+        title: 'Data Export & Import',
+        description: 'Export your data for backups or import from other systems for seamless migration.'
       }
     },
     cta: {

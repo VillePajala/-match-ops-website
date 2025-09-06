@@ -16,7 +16,7 @@ export default {
     hero: {
       title: 'MatchOps Local',
       subtitle: 'Ammattimaiset jalkapallovalmentajan työkalut yksinkertaisesti',
-      description: 'Täydellinen sivulinjan hallintatyökalu jalkapallovalmentajille. Suunnittele taktiikka, seuraa tilastoja ja hallitse tiimiäsi ammattitason ominaisuuksilla yhdessä intuitiivisessa sovelluksessa.',
+      description: 'Valmentajan työkalu ottelupäivään. Suunnittele taktiikka, seuraa tilastoja ja hallitse tiimiäsi intuitiivisilla ominaisuuksilla yhdessä sovelluksessa.',
       ctaPrimary: 'Kokeile ilmaiseksi',
       ctaSecondary: 'Lue lisää',
       statsGames: 'Seurattua peliä',
@@ -24,12 +24,12 @@ export default {
       statsFeatures: 'Ominaisuutta käytettävissä',
       appPreview: {
         title: 'Live-taktinen taulu toiminnassa',
-        subtitle: 'Oikeaa otteludataa • Interaktiivinen sijoittelu • Ammattityökalut'
+        subtitle: 'Oikeaa otteludataa • Interaktiivinen sijoittelu • Valmennustyökalut'
       }
     },
     features: {
       title: 'Kaikki mitä tarvitset ottelupäivänä',
-      subtitle: 'Ammattimaiset valmennustyökalut, jotka toimivat niin kuin valmennat',
+      subtitle: 'Valmennustyökalut, jotka toimivat niin kuin valmennat',
       interactive: {
         title: 'Interaktiivinen jalkapallokenttä',
         description: 'Suunnittele asetelma, piirrä taktiikka ja asemoi pelaajat kosketusmyönteisellä kenttäkäyttöliittymällä.'
@@ -37,10 +37,6 @@ export default {
       statistics: {
         title: 'Kehittyneet tilastot',
         description: 'Seuraa pelaajien suorituskykyä, pelitapahtumia ja joukkueanalytiikka yksityiskohtaisella raportoinnilla.'
-      },
-      management: {
-        title: 'Joukkueen hallinta',
-        description: 'Järjestä kokoonpano, hallitse vaihtoja ja koordinoi pelaajakierrot saumattomasti.'
       },
       realtime: {
         title: 'Live-pelin seuranta',
@@ -50,9 +46,21 @@ export default {
         title: 'Suorituskyvyn analysointi',
         description: 'Tarkastele pelitietoja, tunnista malleja ja paranna joukkueen suorituskykyä ajan mittaan.'
       },
+      teamManagement: {
+        title: 'Joukkue- ja kokoonpanon hallinta',
+        description: 'Rakenna ja organisoi joukkuekokoonpano yksityiskohtaisilla pelaajaprofiilit ja suorituskyvyn seurannalla.'
+      },
+      seasonManagement: {
+        title: 'Kausi- ja turnaushallinta',
+        description: 'Luo kausia ja turnauksia järjestääksesi pelejäsi ja seurataksesi suorituskykyä ajan mittaan.'
+      },
+      gameStorage: {
+        title: 'Tallenna ja lataa pelit',
+        description: 'Tallenna täydelliset otteluistunnot paikallisesti ja lataa ne milloin tahansa tarkastelua tai pelin jatkamista varten.'
+      },
       offline: {
         title: 'Toimii offline-tilassa',
-        description: 'Käytä kaikkia ominaisuuksia ilman internetyhteyttä. Täydellinen mille tahansa pelikentälle.'
+        description: 'Käytä kaikkia ominaisuuksia ilman internetyhteyttä. Toimii millä tahansa pelikentällä.'
       }
     },
     howItWorks: {
@@ -92,7 +100,7 @@ export default {
     categories: {
       tactics: 'Taktinen suunnittelu',
       statistics: 'Tilastot ja analytiikka',
-      management: 'Joukkueen hallinta'
+      management: 'Joukkue- ja tiedonhallinta'
     },
     tactics: {
       description: 'Suunnittele asetelmat, piirrä pelitaktiikat ja luo voittavia strategioita',
@@ -145,47 +153,61 @@ export default {
       },
       liveTracking: {
         title: 'Live-pelin seuranta',
-        description: 'Reaaliaikainen tapahtumien seuranta otteluiden aikana välittömillä tilastopäivityksillä.',
+        description: 'Reaaliaikainen tapahtumien seuranta otteluiden aikana välittömillä tilastopäivityksillä ja älykkäällä vaihtojenhallinnalla.',
         benefits: {
-          0: 'Live-tapahtumien kirjaus',
-          1: 'Reaaliaikaiset tilastot',
-          2: 'Ottelukellon seuranta',
-          3: 'Tapahtumahistoria'
+          0: 'Live-tapahtumien kirjaus - Tallenna maalit, rikkomukset ja ottelutapahtumat reaaliajassa',
+          1: 'Reaaliaikaiset tilastot - Välittömät tilastopäivitykset ja ottelukellon seuranta',
+          2: 'Tapahtumahistoria - Täydellinen ottelun aikajana yksityiskohtaisine tapahtumakirjauksineen',
+          3: 'Älykkäät vaihtomuistutukset - Reilun pelin noudattaminen ja yhden klikkauksen vahvistukset'
         },
         caption: 'Reaaliaikainen ottelun seuranta'
       }
     },
     management: {
-      description: 'Organisoi joukkueet, hallitse pelaajia ja koordinoi ottelupäivää',
-      teamManagement: {
-        title: 'Joukkueen hallinta',
-        description: 'Täydellinen kokoonpanon hallinta pelaajaprofiilit ja yhteystiedot mukaan lukien.',
+      description: 'Organisoi joukkueet, hallitse dataa ja koordinoi valmentamistyönkulkuasi',
+      teamRoster: {
+        title: 'Joukkue- ja kokoonpanon hallinta',
+        description: 'Rakenna ja organisoi joukkuekokoonpano yksityiskohtaisilla pelaajaprofiilit ja suorituskyvyn seurannalla.',
         benefits: {
-          0: 'Pelaajaprofiilit',
-          1: 'Yhteystietojen hallinta',
-          2: 'Lääketieteelliset tiedot',
-          3: 'Vanhempien viestintä'
-        }
+          0: 'Pelaajaprofiilit - Nimet, lempinimet, pelipaidat ja muistiinpanot',
+          1: 'Monitiimi-tuki - Hallitse useita joukkueita samanaikaisesti',
+          2: 'Maalivahtien hallinta - Määritä ja seuraa maalivahteja',
+          3: 'Pelaaja-arviointi - Arvioi pelaajia 10 eri taidossa'
+        },
+        caption: 'Joukkue- ja kokoonpano-organisaatio'
       },
-      substitutions: {
-        title: 'Vaihtojenhallinta',
-        description: 'Älykäs vaihtojen suunnittelu peliajan seurannan ja kiertojärjestelmän hallinnan kanssa.',
+      seasonTournament: {
+        title: 'Kausi- ja turnaushallinta',
+        description: 'Luo kausia ja turnauksia järjestääksesi pelejäsi ja seurataksesi suorituskykyä ajan mittaan.',
         benefits: {
-          0: 'Tasapuolinen peliaika',
-          1: 'Älykkäät kierrot',
-          2: 'Pelipaikkapohjaiset vaihdot',
-          3: 'Peliaikaraportit'
-        }
+          0: 'Kauden luominen - Aseta kausia päivämäärineen ja sijainteineen',
+          1: 'Turnauksen perustaminen - Luo turnauksia ikäryhmille ja tasoille',
+          2: 'Pelien organisointi - Liitä yksittäiset pelit kilpailuihin',
+          3: 'Arkistojärjestelmä - Tallenna valmiit kaudet historiallisiksi tiedoiksi'
+        },
+        caption: 'Kausi- ja turnauksien seuranta'
       },
-      gameDay: {
-        title: 'Ottelupäivän työkalut',
-        description: 'Olennaiset sivulinjan työkalut otteluiden tehokkaaseen hallintaan.',
+      gameStorage: {
+        title: 'Tallenna ja lataa pelit',
+        description: 'Tallenna täydelliset otteluistunnot paikallisesti ja lataa ne milloin tahansa tarkastelua tai pelin jatkamista varten.',
         benefits: {
-          0: 'Digitaalinen joukkuelista',
-          1: 'Loukkaantumisten seuranta',
-          2: 'Sääolosuhteet',
-          3: 'Ottelumuistiinpanot'
-        }
+          0: 'Yhden klikkauksen tallennukset - Tallenna nykyinen pelitila välittömästi',
+          1: 'Automaattinen jatko - Jatka automaattisesti viimeistä peliistuntoasi',
+          2: 'Täydellinen säilytys - Kaikki pelaajapositiot, pisteet ja tapahtumat tallentuvat',
+          3: 'Offline-tallennus - Ei internetyhteyttä tarvita, kaikki tallennetaan paikallisesti'
+        },
+        caption: 'Pelitietojen hallinta'
+      },
+      playerAssessment: {
+        title: 'Pelaaja-arviointi ja -luokitusjärjestelmä',
+        description: '10-taidon pelaaja-arviointijärjestelmä kattavalla luokituksella ja kehityksen seurannalla.',
+        benefits: {
+          0: '10-taidon pelaaja-arviointijärjestelmä (intensiteetti, rohkeus, tekniikka, luovuus jne.)',
+          1: 'Kokonaispelaaja-arvioinnit 1-10 asteikolla',
+          2: 'Arviointihistoria ja kehityksen seuranta ajan mittaan',
+          3: 'Yksityiskohtainen taitojaottelu ja edistymisen seuranta'
+        },
+        caption: 'Pelaaja-arviointi ja -luokitusjärjestelmä'
       }
     },
     technical: {
@@ -202,6 +224,14 @@ export default {
       secure: {
         title: 'Turvallinen ja yksityinen',
         description: 'Joukkueesi data pysyy yksityisenä paikallisen tallennuksen ja valinnaisen pilvisynkronoinnin kanssa.'
+      },
+      pwa: {
+        title: 'PWA-asennus',
+        description: 'Asenna natiivisovelluksena mihin tahansa laitteeseen Progressive Web App -teknologialla.'
+      },
+      dataPortability: {
+        title: 'Tietojen vienti ja tuonti',
+        description: 'Vie tietosi varmuuskopioita varten tai tuo toisista järjestelmistä saumattomaa siirtoa varten.'
       }
     },
     cta: {

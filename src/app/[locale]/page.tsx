@@ -1,10 +1,9 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
-import { Zap, BarChart3, Users, Target, Wifi, ChevronDown } from 'lucide-react';
+import { Zap, BarChart3, Target, Wifi, ChevronDown, Users, Calendar, Save } from 'lucide-react';
 import { useI18n } from '@/locales/client';
-import { Container, Section, Card, CardIcon, CardTitle, CardDescription, Logo } from '@/components/ui';
+import { Container, Section, Card, CardIcon, CardTitle, CardDescription } from '@/components/ui';
 
 export default function HomePage() {
   const t = useI18n();
@@ -13,32 +12,58 @@ export default function HomePage() {
     {
       icon: Target,
       title: t('home.features.interactive.title'),
-      description: t('home.features.interactive.description')
+      description: t('home.features.interactive.description'),
+      screenshot: '/screenshots/tacticalview.png',
+      alt: 'Interactive tactical board showing player positioning and field management'
     },
     {
       icon: BarChart3,
       title: t('home.features.statistics.title'),
-      description: t('home.features.statistics.description')
-    },
-    {
-      icon: Users,
-      title: t('home.features.management.title'),
-      description: t('home.features.management.description')
+      description: t('home.features.statistics.description'),
+      screenshot: '/screenshots/comptetitionstats.png',
+      alt: 'Competition statistics dashboard showing team performance data'
     },
     {
       icon: Zap,
       title: t('home.features.realtime.title'),
-      description: t('home.features.realtime.description')
+      description: t('home.features.realtime.description'),
+      screenshot: '/screenshots/livetracking1.png',
+      alt: 'Live game tracking interface showing real-time match events'
     },
     {
       icon: BarChart3,
       title: t('home.features.analysis.title'),
-      description: t('home.features.analysis.description')
+      description: t('home.features.analysis.description'),
+      screenshot: '/screenshots/playerstats.png',
+      alt: 'Player performance analysis with detailed statistics'
+    },
+    {
+      icon: Users,
+      title: t('home.features.teamManagement.title'),
+      description: t('home.features.teamManagement.description'),
+      screenshot: '/screenshots/team and roster management feature.png',
+      alt: 'Team and roster management interface showing player profiles with names, nicknames, jersey numbers and skill assessments'
+    },
+    {
+      icon: Calendar,
+      title: t('home.features.seasonManagement.title'),
+      description: t('home.features.seasonManagement.description'),
+      screenshot: '/screenshots/seasonandtournamentmanagement.png',
+      alt: 'Season and tournament management dashboard showing season creation, tournament setup and game organization'
+    },
+    {
+      icon: Save,
+      title: t('home.features.gameStorage.title'),
+      description: t('home.features.gameStorage.description'),
+      screenshot: '/screenshots/Saver and load gamespng.png',
+      alt: 'Game save and load functionality showing one-click saves, auto-resume and complete game state preservation'
     },
     {
       icon: Wifi,
       title: t('home.features.offline.title'),
-      description: t('home.features.offline.description')
+      description: t('home.features.offline.description'),
+      screenshot: null, // Need offline capability screenshot
+      alt: 'App interface showing offline functionality'
     }
   ];
 
@@ -68,11 +93,6 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Skip Link */}
-      <Link href="#main-content" className="skip-link">
-        Skip to main content
-      </Link>
-
       {/* Hero Section */}
       <Section variant="content" spacing="xl" className="relative overflow-hidden bg-bg-primary min-h-[80vh] flex items-center">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-800/20 to-slate-950" />
@@ -82,7 +102,15 @@ export default function HomePage() {
         <Container className="relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             {/* Hero Title */}
-            <Logo className="text-4xl sm:text-6xl lg:text-7xl mb-4 text-shadow-lg" />
+            <div className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold mb-4 text-shadow-lg">
+              <div className="text-holographic animate-holographic">
+                <span className="inline sm:hidden">
+                  <span className="block">MatchOps</span>
+                  <span className="block">Local</span>
+                </span>
+                <span className="hidden sm:inline">MatchOps Local</span>
+              </div>
+            </div>
             
             {/* Hero Subtitle */}
             <h2 className="text-xl sm:text-2xl lg:text-3xl text-text-primary mb-4 font-body font-semibold">
@@ -93,11 +121,6 @@ export default function HomePage() {
             <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto mb-6 leading-relaxed font-body">
               {t('home.hero.description')}
             </p>
-            
-            {/* Coming Soon Badge */}
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-600/20 border border-indigo-400/30 mb-4">
-              <span className="text-indigo-300 font-body font-medium text-sm">Coming Soon - Stay Tuned!</span>
-            </div>
             
             {/* Subtle scroll indicator */}
             <div className="flex justify-center mt-6">
@@ -110,7 +133,7 @@ export default function HomePage() {
       </Section>
 
       {/* MatchOps Local App Preview */}
-      <Section className="relative -mt-16 z-20">
+      <Section className="relative -mt-40 sm:-mt-52 lg:-mt-60 z-20">
         <Container>
           <div className="text-center">
             <div className="inline-block bg-slate-800/50 backdrop-blur-sm rounded-3xl p-6 shadow-2xl border border-slate-700/50">
@@ -135,7 +158,7 @@ export default function HomePage() {
       </Section>
 
       {/* Features Section */}
-      <Section id="main-content" spacing="xl">
+      <Section spacing="xl">
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-body font-bold text-text-primary mb-4">
@@ -149,6 +172,17 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <Card key={index} variant="feature" className="group">
+                {feature.screenshot && (
+                  <div className="mb-6 overflow-hidden rounded-lg">
+                    <Image 
+                      src={feature.screenshot}
+                      alt={feature.alt}
+                      width={400}
+                      height={300}
+                      className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                )}
                 <CardIcon className="group-hover:text-accent-lime transition-colors duration-300">
                   <feature.icon className="w-8 h-8" />
                 </CardIcon>
@@ -175,7 +209,7 @@ export default function HomePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
-              <div key={index} className="text-center group">
+              <div key={index} className="text-center group relative">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-indigo-600 to-violet-600 rounded-full text-white font-bold text-xl mb-6 group-hover:scale-110 transition-transform duration-300">
                   {step.number}
                 </div>
@@ -188,7 +222,7 @@ export default function HomePage() {
                 
                 {/* Connection Line (hidden on last item) */}
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 left-1/2 w-full h-0.5 bg-gradient-to-r from-indigo-600/50 to-transparent transform translate-x-8" />
+                  <div className="hidden lg:block pointer-events-none absolute top-8 left-1/2 w-full h-0.5 bg-gradient-to-r from-indigo-600/50 to-transparent transform translate-x-8" />
                 )}
               </div>
             ))}
