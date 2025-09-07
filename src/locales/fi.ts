@@ -96,17 +96,17 @@ export default {
   // Features Page
   features: {
     title: 'Täydellinen ominaisuuskatsaus',
-    subtitle: 'Tutustu kaikkiin työkaluihin, jotka tekevät MatchOps Localista lopullisen valmennuskumppanin',
+    subtitle: 'Tutustu työkaluihin, joiden avulla MatchOps Local on valmentajan paras kumppani',
     categories: {
       tactics: 'Taktinen suunnittelu',
       statistics: 'Tilastot ja analytiikka',
       management: 'Joukkue- ja tiedonhallinta'
     },
     tactics: {
-      description: 'Suunnittele asetelmat, piirrä pelitaktiikat ja luo voittavia strategioita',
+      description: 'Suunnittele muodostelmat, piirrä pelit ja luo voittavat strategiat',
       playerPositioning: {
         title: 'Pelaajien sijoittelu',
-        description: 'Vedä ja pudota -pelaajien sijoittelu reaaliaikaisella muodostelman hallinnalla otteluiden aikana.',
+        description: 'Vedä ja pudota pelaajat paikoilleen ja hallitse muodostelmaa reaaliajassa ottelun aikana.',
         benefits: {
           0: 'Live-pelaajien sijoittelu',
           1: 'Reaaliaikaiset muodostelman päivitykset',
@@ -117,7 +117,7 @@ export default {
       },
       tacticalDrawing: {
         title: 'Taktinen piirustustaulu',
-        description: 'Interaktiiviset piirrostustyökalut taktisten pelien, nuolten ja strategisten kaavioiden luomiseen.',
+        description: 'Interaktiiviset työkalut pelitilanteiden, nuolien ja strategisten kaavioiden piirtämiseen.',
         benefits: {
           0: 'Piirrä taktisia viivoja ja nuolia',
           1: 'Luo vakiotilanteiden pelejä',
@@ -128,10 +128,10 @@ export default {
       }
     },
     statistics: {
-      description: 'Seuraa suorituskykyä yksityiskohtaisella analytiikalla ja raportoinnilla',
+      description: 'Seuraa suorituskykyä tarkalla analytiikalla ja raporteilla',
       competitionStats: {
         title: 'Kilpailutilastot',
-        description: 'Seuraa joukkueen suorituskykyä kausiensa, turnausten ja kilpailujen yli.',
+        description: 'Seuraa joukkueesi suoritusta kausissa, turnauksissa ja kilpailuissa.',
         benefits: {
           0: 'Kilpailun yleiskatsausdata',
           1: 'Turnaus- ja kausiseuranta',
@@ -142,7 +142,7 @@ export default {
       },
       playerAnalysis: {
         title: 'Pelaajan suorituskyvyn analyysi',
-        description: 'Yksityiskohtaiset yksilöllisten pelaajien tilastot ja kehityksen seuranta.',
+        description: 'Yksityiskohtaiset pelaajatilastot ja kehityksen seuranta.',
         benefits: {
           0: 'Yksilölliset pelaajametriikat',
           1: 'Henkilökohtaisen kehityksen seuranta',
@@ -153,7 +153,7 @@ export default {
       },
       liveTracking: {
         title: 'Live-pelin seuranta',
-        description: 'Reaaliaikainen tapahtumien seuranta otteluiden aikana välittömillä tilastopäivityksillä ja älykkäällä vaihtojenhallinnalla.',
+        description: 'Reaaliaikainen tapahtumaseuranta tilastopäivityksillä ja älykkäällä vaihtojen hallinnalla.',
         benefits: {
           0: 'Live-tapahtumien kirjaus - Tallenna maalit, rikkomukset ja ottelutapahtumat reaaliajassa',
           1: 'Reaaliaikaiset tilastot - Välittömät tilastopäivitykset ja ottelukellon seuranta',
@@ -164,10 +164,10 @@ export default {
       }
     },
     management: {
-      description: 'Organisoi joukkueet, hallitse dataa ja koordinoi valmentamistyönkulkuasi',
+      description: 'Organisoi joukkueesi, hallitse dataa ja koordinoi valmennustyönkulkuasi',
       teamRoster: {
         title: 'Joukkue- ja kokoonpanon hallinta',
-        description: 'Rakenna ja organisoi joukkuekokoonpano yksityiskohtaisilla pelaajaprofiilit ja suorituskyvyn seurannalla.',
+        description: 'Rakenna ja hallitse kokoonpanoa yksityiskohtaisten pelaajaprofiilien ja suorituskyvyn seurannan avulla.',
         benefits: {
           0: 'Pelaajaprofiilit - Nimet, lempinimet, pelipaidat ja muistiinpanot',
           1: 'Monitiimi-tuki - Hallitse useita joukkueita samanaikaisesti',
@@ -178,7 +178,7 @@ export default {
       },
       seasonTournament: {
         title: 'Kausi- ja turnaushallinta',
-        description: 'Luo kausia ja turnauksia järjestääksesi pelejäsi ja seurataksesi suorituskykyä ajan mittaan.',
+        description: 'Luo kausia ja turnauksia pelien organisointiin ja seurantaan.',
         benefits: {
           0: 'Kauden luominen - Aseta kausia päivämäärineen ja sijainteineen',
           1: 'Turnauksen perustaminen - Luo turnauksia ikäryhmille ja tasoille',
@@ -189,7 +189,7 @@ export default {
       },
       gameStorage: {
         title: 'Tallenna ja lataa pelit',
-        description: 'Tallenna täydelliset otteluistunnot paikallisesti ja lataa ne milloin tahansa tarkastelua tai pelin jatkamista varten.',
+        description: 'Tallenna ottelut paikallisesti ja palauta ne milloin tahansa tarkasteluun tai jatkamiseen.',
         benefits: {
           0: 'Yhden klikkauksen tallennukset - Tallenna nykyinen pelitila välittömästi',
           1: 'Automaattinen jatko - Jatka automaattisesti viimeistä peliistuntoasi',
@@ -200,7 +200,7 @@ export default {
       },
       playerAssessment: {
         title: 'Pelaaja-arviointi ja -luokitusjärjestelmä',
-        description: '10-taidon pelaaja-arviointijärjestelmä kattavalla luokituksella ja kehityksen seurannalla.',
+        description: 'Pelaaja-arviointi kymmenen taitokategorian ja kehityksen seurannan avulla.',
         benefits: {
           0: '10-taidon pelaaja-arviointijärjestelmä (intensiteetti, rohkeus, tekniikka, luovuus jne.)',
           1: 'Kokonaispelaaja-arvioinnit 1-10 asteikolla',

@@ -1,14 +1,59 @@
 'use client';
 
 import Image from 'next/image';
-import { ArrowRight, Target, BarChart3, Users, Zap, Wifi, Smartphone, Shield, Clock, Trophy, Settings, Calendar, Download, Upload, Star } from 'lucide-react';
+import {
+  ArrowRight,
+  Target,
+  BarChart3,
+  Users,
+  Zap,
+  Wifi,
+  Smartphone,
+  Shield,
+  Clock,
+  Trophy,
+  Settings,
+  Calendar,
+  Download,
+  Star,
+  type LucideIcon
+} from 'lucide-react';
 import { useI18n } from '@/locales/client';
-import { Button, Container, Section, Card, CardIcon, CardTitle, CardDescription } from '@/components/ui';
+import {
+  Button,
+  Container,
+  Section,
+  Card,
+  CardIcon,
+  CardTitle,
+  CardDescription
+} from '@/components/ui';
+
+type TFunction = ReturnType<typeof useI18n>;
+type TranslationKey = Parameters<TFunction>[0];
+
+type Feature = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  benefits: TranslationKey[];
+  image?: string;
+  caption: TranslationKey;
+};
+
+type FeatureCategory = {
+  id: string;
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  color: 'cyan' | 'lime' | 'violet';
+  features: Feature[];
+};
 
 export default function FeaturesPage() {
   const t = useI18n();
 
-  const featureCategories = [
+  const featureCategories: FeatureCategory[] = [
     {
       id: 'tactics',
       title: t('features.categories.tactics'),
@@ -20,15 +65,17 @@ export default function FeaturesPage() {
           icon: Settings,
           title: t('features.tactics.playerPositioning.title'),
           description: t('features.tactics.playerPositioning.description'),
-          benefits: ['features.tactics.playerPositioning.benefits.0', 'features.tactics.playerPositioning.benefits.1', 'features.tactics.playerPositioning.benefits.2', 'features.tactics.playerPositioning.benefits.3'],
-          image: '/features/formations.png'
+          benefits: ['features.tactics.playerPositioning.benefits.0', 'features.tactics.playerPositioning.benefits.1', 'features.tactics.playerPositioning.benefits.2', 'features.tactics.playerPositioning.benefits.3'] as TranslationKey[],
+          image: '/features/player-positioning-live-match.png',
+          caption: 'features.tactics.playerPositioning.caption' as TranslationKey
         },
         {
           icon: Target,
           title: t('features.tactics.tacticalDrawing.title'),
           description: t('features.tactics.tacticalDrawing.description'),
-          benefits: ['features.tactics.tacticalDrawing.benefits.0', 'features.tactics.tacticalDrawing.benefits.1', 'features.tactics.tacticalDrawing.benefits.2', 'features.tactics.tacticalDrawing.benefits.3'],
-          image: '/features/tactical-field.png'
+          benefits: ['features.tactics.tacticalDrawing.benefits.0', 'features.tactics.tacticalDrawing.benefits.1', 'features.tactics.tacticalDrawing.benefits.2', 'features.tactics.tacticalDrawing.benefits.3'] as TranslationKey[],
+          image: '/features/tactical-drawing-board.png',
+          caption: 'features.tactics.tacticalDrawing.caption' as TranslationKey
         }
       ]
     },
@@ -43,22 +90,25 @@ export default function FeaturesPage() {
           icon: BarChart3,
           title: t('features.statistics.competitionStats.title'),
           description: t('features.statistics.competitionStats.description'),
-          benefits: ['features.statistics.competitionStats.benefits.0', 'features.statistics.competitionStats.benefits.1', 'features.statistics.competitionStats.benefits.2', 'features.statistics.competitionStats.benefits.3'],
-          image: '/features/season-stats.png'
+          benefits: ['features.statistics.competitionStats.benefits.0', 'features.statistics.competitionStats.benefits.1', 'features.statistics.competitionStats.benefits.2', 'features.statistics.competitionStats.benefits.3'] as TranslationKey[],
+          image: '/features/competition-statistics.png',
+          caption: 'features.statistics.competitionStats.caption' as TranslationKey
         },
         {
           icon: Trophy,
           title: t('features.statistics.playerAnalysis.title'),
           description: t('features.statistics.playerAnalysis.description'),
-          benefits: ['features.statistics.playerAnalysis.benefits.0', 'features.statistics.playerAnalysis.benefits.1', 'features.statistics.playerAnalysis.benefits.2', 'features.statistics.playerAnalysis.benefits.3'],
-          image: '/features/player-analysis.png'
+          benefits: ['features.statistics.playerAnalysis.benefits.0', 'features.statistics.playerAnalysis.benefits.1', 'features.statistics.playerAnalysis.benefits.2', 'features.statistics.playerAnalysis.benefits.3'] as TranslationKey[],
+          image: '/features/player-performance-analysis.png',
+          caption: 'features.statistics.playerAnalysis.caption' as TranslationKey
         },
         {
           icon: Clock,
           title: t('features.statistics.liveTracking.title'),
           description: t('features.statistics.liveTracking.description'),
-          benefits: ['features.statistics.liveTracking.benefits.0', 'features.statistics.liveTracking.benefits.1', 'features.statistics.liveTracking.benefits.2', 'features.statistics.liveTracking.benefits.3'],
-          image: '/features/live-tracking.png'
+          benefits: ['features.statistics.liveTracking.benefits.0', 'features.statistics.liveTracking.benefits.1', 'features.statistics.liveTracking.benefits.2', 'features.statistics.liveTracking.benefits.3'] as TranslationKey[],
+          image: '/features/live-game-tracking.png',
+          caption: 'features.statistics.liveTracking.caption' as TranslationKey
         }
       ]
     },
@@ -73,33 +123,37 @@ export default function FeaturesPage() {
           icon: Users,
           title: t('features.management.teamRoster.title'),
           description: t('features.management.teamRoster.description'),
-          benefits: ['features.management.teamRoster.benefits.0', 'features.management.teamRoster.benefits.1', 'features.management.teamRoster.benefits.2', 'features.management.teamRoster.benefits.3'],
-          image: '/screenshots/team and roster management feature.png'
+          benefits: ['features.management.teamRoster.benefits.0', 'features.management.teamRoster.benefits.1', 'features.management.teamRoster.benefits.2', 'features.management.teamRoster.benefits.3'] as TranslationKey[],
+          image: '/screenshots/team and roster management feature.png',
+          caption: 'features.management.teamRoster.caption' as TranslationKey
         },
         {
           icon: Calendar,
           title: t('features.management.seasonTournament.title'),
           description: t('features.management.seasonTournament.description'),
-          benefits: ['features.management.seasonTournament.benefits.0', 'features.management.seasonTournament.benefits.1', 'features.management.seasonTournament.benefits.2', 'features.management.seasonTournament.benefits.3'],
-          image: '/screenshots/seasonandtournamentmanagement.png'
+          benefits: ['features.management.seasonTournament.benefits.0', 'features.management.seasonTournament.benefits.1', 'features.management.seasonTournament.benefits.2', 'features.management.seasonTournament.benefits.3'] as TranslationKey[],
+          image: '/screenshots/seasonandtournamentmanagement.png',
+          caption: 'features.management.seasonTournament.caption' as TranslationKey
         },
         {
           icon: Shield,
           title: t('features.management.gameStorage.title'),
           description: t('features.management.gameStorage.description'),
-          benefits: ['features.management.gameStorage.benefits.0', 'features.management.gameStorage.benefits.1', 'features.management.gameStorage.benefits.2', 'features.management.gameStorage.benefits.3'],
-          image: '/screenshots/Saver and load gamespng.png'
+          benefits: ['features.management.gameStorage.benefits.0', 'features.management.gameStorage.benefits.1', 'features.management.gameStorage.benefits.2', 'features.management.gameStorage.benefits.3'] as TranslationKey[],
+          image: '/screenshots/Saver and load gamespng.png',
+          caption: 'features.management.gameStorage.caption' as TranslationKey
         },
         {
           icon: Star,
           title: t('features.management.playerAssessment.title'),
           description: t('features.management.playerAssessment.description'),
-          benefits: ['features.management.playerAssessment.benefits.0', 'features.management.playerAssessment.benefits.1', 'features.management.playerAssessment.benefits.2', 'features.management.playerAssessment.benefits.3'],
-          image: '/screenshots/palyerassesments.png'
+          benefits: ['features.management.playerAssessment.benefits.0', 'features.management.playerAssessment.benefits.1', 'features.management.playerAssessment.benefits.2', 'features.management.playerAssessment.benefits.3'] as TranslationKey[],
+          image: '/screenshots/palyerassesments.png',
+          caption: 'features.management.playerAssessment.caption' as TranslationKey
         }
       ]
     }
-  ] as const;
+  ];
 
   const getColorClasses = (color: string) => {
     const colors = {
@@ -204,148 +258,20 @@ export default function FeaturesPage() {
 
                   {/* Feature Image */}
                   <div className={`${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
-                    {feature.title === 'Player Positioning' ? (
+                    {feature.image ? (
                       <div className="flex justify-center">
                         <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
                           <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
-                            <Image 
-                              src="/features/player-positioning-live-match.png" 
-                              alt="MatchOps Local player positioning interface showing live match between Kultsa and PePo Purppura with real-time player positions"
+                            <Image
+                              src={feature.image}
+                              alt={t(feature.caption)}
                               width={288}
                               height={624}
                               className="w-full h-auto block"
                               style={{ imageRendering: 'crisp-edges' }}
                             />
                           </div>
-                          <p className="text-slate-300 text-xs mt-2 text-center font-body">{t('features.tactics.playerPositioning.caption')}</p>
-                        </div>
-                      </div>
-                    ) : feature.title === 'Tactical Drawing Board' ? (
-                      <div className="flex justify-center">
-                        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
-                          <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
-                            <Image 
-                              src="/features/tactical-drawing-board.png" 
-                              alt="MatchOps Local tactical drawing interface showing orange tactical arrows and play diagrams drawn on soccer field"
-                              width={288}
-                              height={624}
-                              className="w-full h-auto block"
-                              style={{ imageRendering: 'crisp-edges' }}
-                            />
-                          </div>
-                          <p className="text-slate-300 text-xs mt-2 text-center font-body">{t('features.tactics.tacticalDrawing.caption')}</p>
-                        </div>
-                      </div>
-                    ) : feature.title === 'Competition Statistics' ? (
-                      <div className="flex justify-center">
-                        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
-                          <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
-                            <Image 
-                              src="/features/competition-statistics.png" 
-                              alt="MatchOps Local competition statistics showing EKK Kartteli 2025 team performance with 78.9% win rate and player statistics"
-                              width={288}
-                              height={624}
-                              className="w-full h-auto block"
-                              style={{ imageRendering: 'crisp-edges' }}
-                            />
-                          </div>
-                          <p className="text-slate-300 text-xs mt-2 text-center font-body">{t('features.statistics.competitionStats.caption')}</p>
-                        </div>
-                      </div>
-                    ) : feature.title === 'Player Performance Analysis' ? (
-                      <div className="flex justify-center">
-                        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
-                          <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
-                            <Image 
-                              src="/features/player-performance-analysis.png" 
-                              alt="MatchOps Local player performance analysis showing Jooa Pajala individual statistics with 47 matches, 38 goals, 16 assists and performance graphs"
-                              width={288}
-                              height={624}
-                              className="w-full h-auto block"
-                              style={{ imageRendering: 'crisp-edges' }}
-                            />
-                          </div>
-                          <p className="text-slate-300 text-xs mt-2 text-center font-body">{t('features.statistics.playerAnalysis.caption')}</p>
-                        </div>
-                      </div>
-                    ) : feature.title === 'Live Game Tracking' ? (
-                      <div className="flex justify-center">
-                        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
-                          <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
-                            <Image 
-                              src="/features/live-game-tracking.png" 
-                              alt="MatchOps Local live game tracking interface showing PePo Lila vs LaPa match with real-time timer at 02:16, live events, and action buttons"
-                              width={288}
-                              height={624}
-                              className="w-full h-auto block"
-                              style={{ imageRendering: 'crisp-edges' }}
-                            />
-                          </div>
-                          <p className="text-slate-300 text-xs mt-2 text-center font-body">{t('features.statistics.liveTracking.caption')}</p>
-                        </div>
-                      </div>
-                    ) : feature.title === 'Team & Roster Management' ? (
-                      <div className="flex justify-center">
-                        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
-                          <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
-                            <Image 
-                              src="/screenshots/team and roster management feature.png" 
-                              alt="MatchOps Local team and roster management interface showing player profiles with names, nicknames, jersey numbers and skill assessments"
-                              width={288}
-                              height={624}
-                              className="w-full h-auto block"
-                              style={{ imageRendering: 'crisp-edges' }}
-                            />
-                          </div>
-                          <p className="text-slate-300 text-xs mt-2 text-center font-body">{t('features.management.teamRoster.caption')}</p>
-                        </div>
-                      </div>
-                    ) : feature.title === 'Season & Tournament Management' ? (
-                      <div className="flex justify-center">
-                        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
-                          <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
-                            <Image 
-                              src="/screenshots/seasonandtournamentmanagement.png" 
-                              alt="MatchOps Local season and tournament management interface showing season creation, tournament setup and game organization"
-                              width={288}
-                              height={624}
-                              className="w-full h-auto block"
-                              style={{ imageRendering: 'crisp-edges' }}
-                            />
-                          </div>
-                          <p className="text-slate-300 text-xs mt-2 text-center font-body">{t('features.management.seasonTournament.caption')}</p>
-                        </div>
-                      </div>
-                    ) : feature.title === 'Save & Load Games' ? (
-                      <div className="flex justify-center">
-                        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
-                          <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
-                            <Image 
-                              src="/screenshots/Saver and load gamespng.png" 
-                              alt="MatchOps Local save and load games interface showing one-click saves, auto-resume and complete game state preservation"
-                              width={288}
-                              height={624}
-                              className="w-full h-auto block"
-                              style={{ imageRendering: 'crisp-edges' }}
-                            />
-                          </div>
-                          <p className="text-slate-300 text-xs mt-2 text-center font-body">{t('features.management.gameStorage.caption')}</p>
-                        </div>
-                      </div>
-                    ) : feature.title === 'Player Assessment & Rating System' ? (
-                      <div className="flex justify-center">
-                        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 group hover:border-slate-600/50 transition-colors duration-300">
-                          <div className="bg-black rounded-xl overflow-hidden w-72 mx-auto">
-                            <Image 
-                              src="/screenshots/palyerassesments.png" 
-                              alt="MatchOps Local player assessment and rating system showing 10-skill evaluation with intensity, courage, technique ratings"
-                              width={288}
-                              height={624}
-                              className="w-full h-auto block"
-                              style={{ imageRendering: 'crisp-edges' }}
-                            />
-                          </div>
-                          <p className="text-slate-300 text-xs mt-2 text-center font-body">{t('features.management.playerAssessment.caption')}</p>
+                          <p className="text-slate-300 text-xs mt-2 text-center font-body">{t(feature.caption)}</p>
                         </div>
                       </div>
                     ) : (
