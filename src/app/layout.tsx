@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { StructuredData } from "@/components/StructuredData";
 import { generateWebsiteSchema, generateOrganizationSchema, generateSoftwareApplicationSchema } from "@/lib/seo";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: {
@@ -104,6 +105,7 @@ export default function RootLayout({
       </head>
       <body className="bg-bg-primary text-text-primary font-body antialiased">
         {children}
+        <Analytics />
       </body>
     </html>
   );
