@@ -1,14 +1,59 @@
 'use client';
 
 import Image from 'next/image';
-import { ArrowRight, Target, BarChart3, Users, Zap, Wifi, Smartphone, Shield, Clock, Trophy, Settings, Calendar, Download, Star } from 'lucide-react';
+import {
+  ArrowRight,
+  Target,
+  BarChart3,
+  Users,
+  Zap,
+  Wifi,
+  Smartphone,
+  Shield,
+  Clock,
+  Trophy,
+  Settings,
+  Calendar,
+  Download,
+  Star,
+  type LucideIcon
+} from 'lucide-react';
 import { useI18n } from '@/locales/client';
-import { Button, Container, Section, Card, CardIcon, CardTitle, CardDescription } from '@/components/ui';
+import {
+  Button,
+  Container,
+  Section,
+  Card,
+  CardIcon,
+  CardTitle,
+  CardDescription
+} from '@/components/ui';
+
+type TFunction = ReturnType<typeof useI18n>;
+type TranslationKey = Parameters<TFunction>[0];
+
+type Feature = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  benefits: TranslationKey[];
+  image?: string;
+  caption: TranslationKey;
+};
+
+type FeatureCategory = {
+  id: string;
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  color: 'cyan' | 'lime' | 'violet';
+  features: Feature[];
+};
 
 export default function FeaturesPage() {
   const t = useI18n();
 
-  const featureCategories = [
+  const featureCategories: FeatureCategory[] = [
     {
       id: 'tactics',
       title: t('features.categories.tactics'),
@@ -20,17 +65,17 @@ export default function FeaturesPage() {
           icon: Settings,
           title: t('features.tactics.playerPositioning.title'),
           description: t('features.tactics.playerPositioning.description'),
-          benefits: ['features.tactics.playerPositioning.benefits.0', 'features.tactics.playerPositioning.benefits.1', 'features.tactics.playerPositioning.benefits.2', 'features.tactics.playerPositioning.benefits.3'],
+          benefits: ['features.tactics.playerPositioning.benefits.0', 'features.tactics.playerPositioning.benefits.1', 'features.tactics.playerPositioning.benefits.2', 'features.tactics.playerPositioning.benefits.3'] as TranslationKey[],
           image: '/features/player-positioning-live-match.png',
-          caption: 'features.tactics.playerPositioning.caption'
+          caption: 'features.tactics.playerPositioning.caption' as TranslationKey
         },
         {
           icon: Target,
           title: t('features.tactics.tacticalDrawing.title'),
           description: t('features.tactics.tacticalDrawing.description'),
-          benefits: ['features.tactics.tacticalDrawing.benefits.0', 'features.tactics.tacticalDrawing.benefits.1', 'features.tactics.tacticalDrawing.benefits.2', 'features.tactics.tacticalDrawing.benefits.3'],
+          benefits: ['features.tactics.tacticalDrawing.benefits.0', 'features.tactics.tacticalDrawing.benefits.1', 'features.tactics.tacticalDrawing.benefits.2', 'features.tactics.tacticalDrawing.benefits.3'] as TranslationKey[],
           image: '/features/tactical-drawing-board.png',
-          caption: 'features.tactics.tacticalDrawing.caption'
+          caption: 'features.tactics.tacticalDrawing.caption' as TranslationKey
         }
       ]
     },
@@ -45,25 +90,25 @@ export default function FeaturesPage() {
           icon: BarChart3,
           title: t('features.statistics.competitionStats.title'),
           description: t('features.statistics.competitionStats.description'),
-          benefits: ['features.statistics.competitionStats.benefits.0', 'features.statistics.competitionStats.benefits.1', 'features.statistics.competitionStats.benefits.2', 'features.statistics.competitionStats.benefits.3'],
+          benefits: ['features.statistics.competitionStats.benefits.0', 'features.statistics.competitionStats.benefits.1', 'features.statistics.competitionStats.benefits.2', 'features.statistics.competitionStats.benefits.3'] as TranslationKey[],
           image: '/features/competition-statistics.png',
-          caption: 'features.statistics.competitionStats.caption'
+          caption: 'features.statistics.competitionStats.caption' as TranslationKey
         },
         {
           icon: Trophy,
           title: t('features.statistics.playerAnalysis.title'),
           description: t('features.statistics.playerAnalysis.description'),
-          benefits: ['features.statistics.playerAnalysis.benefits.0', 'features.statistics.playerAnalysis.benefits.1', 'features.statistics.playerAnalysis.benefits.2', 'features.statistics.playerAnalysis.benefits.3'],
+          benefits: ['features.statistics.playerAnalysis.benefits.0', 'features.statistics.playerAnalysis.benefits.1', 'features.statistics.playerAnalysis.benefits.2', 'features.statistics.playerAnalysis.benefits.3'] as TranslationKey[],
           image: '/features/player-performance-analysis.png',
-          caption: 'features.statistics.playerAnalysis.caption'
+          caption: 'features.statistics.playerAnalysis.caption' as TranslationKey
         },
         {
           icon: Clock,
           title: t('features.statistics.liveTracking.title'),
           description: t('features.statistics.liveTracking.description'),
-          benefits: ['features.statistics.liveTracking.benefits.0', 'features.statistics.liveTracking.benefits.1', 'features.statistics.liveTracking.benefits.2', 'features.statistics.liveTracking.benefits.3'],
+          benefits: ['features.statistics.liveTracking.benefits.0', 'features.statistics.liveTracking.benefits.1', 'features.statistics.liveTracking.benefits.2', 'features.statistics.liveTracking.benefits.3'] as TranslationKey[],
           image: '/features/live-game-tracking.png',
-          caption: 'features.statistics.liveTracking.caption'
+          caption: 'features.statistics.liveTracking.caption' as TranslationKey
         }
       ]
     },
@@ -78,37 +123,37 @@ export default function FeaturesPage() {
           icon: Users,
           title: t('features.management.teamRoster.title'),
           description: t('features.management.teamRoster.description'),
-          benefits: ['features.management.teamRoster.benefits.0', 'features.management.teamRoster.benefits.1', 'features.management.teamRoster.benefits.2', 'features.management.teamRoster.benefits.3'],
+          benefits: ['features.management.teamRoster.benefits.0', 'features.management.teamRoster.benefits.1', 'features.management.teamRoster.benefits.2', 'features.management.teamRoster.benefits.3'] as TranslationKey[],
           image: '/screenshots/team and roster management feature.png',
-          caption: 'features.management.teamRoster.caption'
+          caption: 'features.management.teamRoster.caption' as TranslationKey
         },
         {
           icon: Calendar,
           title: t('features.management.seasonTournament.title'),
           description: t('features.management.seasonTournament.description'),
-          benefits: ['features.management.seasonTournament.benefits.0', 'features.management.seasonTournament.benefits.1', 'features.management.seasonTournament.benefits.2', 'features.management.seasonTournament.benefits.3'],
+          benefits: ['features.management.seasonTournament.benefits.0', 'features.management.seasonTournament.benefits.1', 'features.management.seasonTournament.benefits.2', 'features.management.seasonTournament.benefits.3'] as TranslationKey[],
           image: '/screenshots/seasonandtournamentmanagement.png',
-          caption: 'features.management.seasonTournament.caption'
+          caption: 'features.management.seasonTournament.caption' as TranslationKey
         },
         {
           icon: Shield,
           title: t('features.management.gameStorage.title'),
           description: t('features.management.gameStorage.description'),
-          benefits: ['features.management.gameStorage.benefits.0', 'features.management.gameStorage.benefits.1', 'features.management.gameStorage.benefits.2', 'features.management.gameStorage.benefits.3'],
+          benefits: ['features.management.gameStorage.benefits.0', 'features.management.gameStorage.benefits.1', 'features.management.gameStorage.benefits.2', 'features.management.gameStorage.benefits.3'] as TranslationKey[],
           image: '/screenshots/Saver and load gamespng.png',
-          caption: 'features.management.gameStorage.caption'
+          caption: 'features.management.gameStorage.caption' as TranslationKey
         },
         {
           icon: Star,
           title: t('features.management.playerAssessment.title'),
           description: t('features.management.playerAssessment.description'),
-          benefits: ['features.management.playerAssessment.benefits.0', 'features.management.playerAssessment.benefits.1', 'features.management.playerAssessment.benefits.2', 'features.management.playerAssessment.benefits.3'],
+          benefits: ['features.management.playerAssessment.benefits.0', 'features.management.playerAssessment.benefits.1', 'features.management.playerAssessment.benefits.2', 'features.management.playerAssessment.benefits.3'] as TranslationKey[],
           image: '/screenshots/palyerassesments.png',
-          caption: 'features.management.playerAssessment.caption'
+          caption: 'features.management.playerAssessment.caption' as TranslationKey
         }
       ]
     }
-  ] as const;
+  ];
 
   const getColorClasses = (color: string) => {
     const colors = {
